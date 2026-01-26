@@ -47,8 +47,8 @@ nav a {
 /* HAMBURGER */
 .menu-toggle {
   display:none;
-  width:34px;
-  height:24px;
+  width:30px;
+  height:22px;
   flex-direction:column;
   justify-content:space-between;
   cursor:pointer;
@@ -58,18 +58,18 @@ nav a {
   height:3px;
   background:white;
   border-radius:2px;
-  transition:.3s;
+  transition:transform .35s ease, opacity .25s ease;
 }
 
-/* Animate to X */
+/* Smooth X */
 .menu-toggle.active span:nth-child(1) {
-  transform:rotate(45deg) translate(5px,5px);
+  transform:translateY(9px) rotate(45deg);
 }
 .menu-toggle.active span:nth-child(2) {
   opacity:0;
 }
 .menu-toggle.active span:nth-child(3) {
-  transform:rotate(-45deg) translate(6px,-6px);
+  transform:translateY(-9px) rotate(-45deg);
 }
 
 /* SECTIONS */
@@ -205,23 +205,30 @@ footer {
 
   nav {
     width:100%;
-    display:none;
     flex-direction:column;
     background:#143f2e;
     margin-top:14px;
-    padding:18px 0;
+    padding:14px 0;
     border-radius:14px;
-  }
 
-  nav a {
-    margin:16px 0;
-    text-align:center;
-    font-size:1.15rem;
-    padding:10px 0;
+    opacity:0;
+    transform:translateY(-10px);
+    pointer-events:none;
+
+    transition:opacity .35s ease, transform .35s ease;
   }
 
   nav.active {
-    display:flex;
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+  }
+
+  nav a {
+    margin:14px 0;
+    text-align:center;
+    font-size:1.15rem;
+    padding:12px 0;
   }
 
   .menu-toggle {
@@ -321,27 +328,19 @@ ethically, and with full responsibility for every rupee and every promise made.
 <div class="what-card">
 <div class="what-icon">❤️</div>
 <h3>Medical Assistance</h3>
-<p>
-We help patients reach treatment when finances stand in the way — supporting surgeries,
-hospital care, and urgent medical needs.
-</p>
+<p>We help patients reach treatment when finances stand in the way.</p>
 </div>
 
 <div class="what-card">
 <div class="what-icon">📚</div>
 <h3>Educational Support</h3>
-<p>
-We stand beside students whose education is at risk — helping them continue their studies
-when circumstances threaten to force them to stop.
-</p>
+<p>We help students continue their studies when life threatens to stop them.</p>
 </div>
 
 <div class="what-card">
 <div class="what-icon">✔</div>
 <h3>Case Verification</h3>
-<p>
-Every case we support is carefully reviewed so that help reaches exactly where it is meant to go.
-</p>
+<p>Every case is reviewed carefully so help reaches where it truly belongs.</p>
 </div>
 
 </div>
@@ -350,16 +349,15 @@ Every case we support is carefully reviewed so that help reaches exactly where i
 <section class="who">
 <h2>Who We Are</h2>
 <p>
-We are a group of college students from different parts of India who believe that
-access to healthcare and education should never depend on financial privilege.
+We are college students from different parts of India who believe access to healthcare
+and education should never depend on financial privilege.
 </p>
 </section>
 
 <section class="why">
 <h2>Why This Matters</h2>
 <p>
-We exist to step in at critical moments — so that a lack of money does not become
-a lack of opportunity.
+We step in at critical moments so money never becomes the reason someone loses their future.
 </p>
 </section>
 
