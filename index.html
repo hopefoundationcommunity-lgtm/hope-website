@@ -8,17 +8,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-* { box-sizing: border-box; margin:0; padding:0; }
-html { scroll-behavior:smooth; }
-
-body {
-  font-family:"Inter", sans-serif;
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"Inter",sans-serif;
   background:#f2faf6;
   color:#1f2f27;
 }
 
 /* HEADER */
-header {
+header{
   background:#143f2e;
   padding:18px 8%;
   display:flex;
@@ -27,16 +26,13 @@ header {
   position:sticky;
   top:0;
   z-index:100;
+  min-height:72px;
 }
-
-header h1 { color:white; }
+header h1{color:white;font-size:1.5rem}
 
 /* NAV */
-nav {
-  display:flex;
-}
-
-nav a {
+nav{display:flex;}
+nav a{
   color:white;
   margin-left:25px;
   text-decoration:none;
@@ -45,7 +41,7 @@ nav a {
 }
 
 /* HAMBURGER */
-.menu-toggle {
+.menu-toggle{
   display:none;
   width:34px;
   height:24px;
@@ -53,240 +49,197 @@ nav a {
   justify-content:space-between;
   cursor:pointer;
 }
-
-.menu-toggle span {
+.menu-toggle span{
   height:3px;
   background:white;
   border-radius:2px;
-  transition:transform .35s ease, opacity .2s ease;
+  transition:.35s ease;
 }
-
-/* smoother X */
-.menu-toggle.active span:nth-child(1) {
+.menu-toggle.active span:nth-child(1){
   transform:translateY(10px) rotate(45deg);
 }
-.menu-toggle.active span:nth-child(2) {
-  opacity:0;
-}
-.menu-toggle.active span:nth-child(3) {
+.menu-toggle.active span:nth-child(2){opacity:0;}
+.menu-toggle.active span:nth-child(3){
   transform:translateY(-10px) rotate(-45deg);
 }
 
 /* SECTIONS */
-section { padding:120px 10%; }
+section{padding:140px 10%;}
 
 /* HERO */
-.hero {
+.hero{
   background:linear-gradient(#f2faf6,#edf7f1);
   text-align:center;
+  min-height:80vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
-
-.hero h2 {
-  font-family:"Playfair Display", serif;
+.hero h2{
+  font-family:"Playfair Display",serif;
   font-size:3rem;
   max-width:900px;
-  margin:0 auto 24px;
+  margin:0 auto 28px;
+  line-height:1.2;
 }
-
-.hero p {
+.hero p{
   max-width:760px;
-  margin:0 auto 45px;
+  margin:0 auto 60px;
   font-size:1.25rem;
-  line-height:1.85;
+  line-height:1.9;
   color:#3f6152;
 }
-
-.hero-buttons {
+.hero-buttons{
   display:flex;
   justify-content:center;
-  gap:18px;
+  gap:20px;
   flex-wrap:wrap;
 }
-
-.hero-buttons a {
-  padding:16px 38px;
-  border-radius:30px;
+.hero-buttons a{
+  padding:18px 44px;
+  border-radius:40px;
   text-decoration:none;
   font-weight:600;
+  font-size:1rem;
 }
-
-.btn-primary { background:#143f2e; color:white; }
-.btn-secondary { border:2px solid #143f2e; color:#143f2e; }
+.btn-primary{background:#143f2e;color:white;}
+.btn-secondary{border:2px solid #143f2e;color:#143f2e;}
 
 /* WHAT WE DO */
-.what-we-do { background:#edf7f1; }
-
-.what-header {
-  max-width:700px;
-  margin-bottom:60px;
-}
-
-.what-header h2 {
-  font-family:"Playfair Display", serif;
+.what-we-do{background:#edf7f1;}
+.what-header{max-width:720px;margin-bottom:80px;}
+.what-header h2{
+  font-family:"Playfair Display",serif;
   font-size:2.6rem;
   margin-bottom:18px;
 }
-
-.what-header p {
+.what-header p{
   font-size:1.15rem;
-  line-height:1.8;
+  line-height:1.9;
   color:#3f6152;
 }
-
-.what-grid {
+.what-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:40px;
+  gap:50px;
 }
-
-.what-card {
+.what-card{
   background:white;
-  border-radius:26px;
-  padding:48px 40px;
+  border-radius:28px;
+  padding:56px 44px;
   box-shadow:0 20px 45px rgba(0,0,0,0.06);
 }
-
-.what-icon {
-  width:56px;
-  height:56px;
+.what-icon{
+  width:58px;height:58px;
   border-radius:16px;
   background:#143f2e;
   display:flex;
   align-items:center;
   justify-content:center;
-  margin-bottom:24px;
+  margin-bottom:28px;
   color:white;
   font-size:1.5rem;
 }
-
-.what-card h3 {
-  font-family:"Playfair Display", serif;
-  font-size:1.55rem;
-  margin-bottom:14px;
+.what-card h3{
+  font-family:"Playfair Display",serif;
+  font-size:1.6rem;
+  margin-bottom:16px;
 }
-
-.what-card p {
+.what-card p{
   font-size:1.1rem;
-  line-height:1.7;
+  line-height:1.8;
   color:#3f6152;
 }
 
 /* WHO / WHY */
-.who, .why { background:#f9fdfb; }
-
-.who h2, .why h2 {
-  font-family:"Playfair Display", serif;
+.who,.why{background:#f9fdfb;}
+.who h2,.why h2{
+  font-family:"Playfair Display",serif;
   font-size:2.5rem;
-  margin-bottom:20px;
+  margin-bottom:22px;
 }
-
-.who p, .why p {
+.who p,.why p{
   max-width:850px;
   font-size:1.15rem;
-  line-height:1.85;
+  line-height:1.9;
   color:#3f6152;
 }
 
 /* FOOTER */
-footer {
+footer{
   background:#143f2e;
   color:white;
   text-align:center;
-  padding:36px;
+  padding:44px;
 }
 
-/* MOBILE NAV DESIGN */
+/* MOBILE */
 @media(max-width:900px){
 
-  header {
-    padding:16px 6%;
-  }
+header{
+  padding:18px 6%;
+  min-height:80px;
+}
 
-  nav {
-    position:fixed;
-    inset:0;
-    background:linear-gradient(180deg,#143f2e,#0f2f22);
+.menu-toggle{display:flex;z-index:100;}
 
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+nav{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(180deg,#143f2e,#0f2f22);
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:28px;
+  opacity:0;
+  pointer-events:none;
+  transition:.35s ease;
+  z-index:90;
+}
+nav.active{
+  opacity:1;
+  pointer-events:auto;
+}
+nav a{
+  margin:0;
+  font-size:1.5rem;
+  padding:16px 48px;
+  border-radius:999px;
+}
 
-    gap:22px;
+section{padding:120px 8%;}
 
-    opacity:0;
-    pointer-events:none;
-    transition:.35s ease;
-    z-index:90;
-  }
+.hero{min-height:85vh;}
+.hero h2{
+  font-size:2.2rem;
+  line-height:1.3;
+}
+.hero p{
+  font-size:1.1rem;
+  line-height:2;
+  margin-bottom:70px;
+}
 
-  nav.active {
-    opacity:1;
-    pointer-events:auto;
-  }
+.hero-buttons a{
+  padding:18px 50px;
+  font-size:1.05rem;
+}
 
-  nav a {
-    margin:0;
-    font-size:1.4rem;
-    font-weight:500;
-    letter-spacing:.5px;
-    padding:14px 36px;
-    border-radius:999px;
-    transition:.25s ease;
-  }
+.what-header h2{font-size:2.1rem;}
+.what-header p{font-size:1.05rem;}
 
-  nav a:hover {
-    background:rgba(255,255,255,.12);
-  }
+.what-grid{
+  grid-template-columns:1fr;
+  gap:44px;
+}
+.what-card{
+  padding:44px 32px;
+}
+.what-card h3{font-size:1.4rem;}
+.what-card p{font-size:1.05rem;}
 
-  .menu-toggle {
-    display:flex;
-    z-index:100;
-  }
-
-  section { padding:90px 7%; }
-
-  .hero h2 {
-    font-size:2rem;
-    line-height:1.25;
-  }
-
-  .hero p {
-    font-size:1.05rem;
-    line-height:1.8;
-  }
-
-  .what-header h2 {
-    font-size:2rem;
-  }
-
-  .what-header p {
-    font-size:1.05rem;
-  }
-
-  .what-grid {
-    grid-template-columns:1fr;
-    gap:32px;
-  }
-
-  .what-card {
-    padding:36px 26px;
-  }
-
-  .what-card h3 {
-    font-size:1.35rem;
-  }
-
-  .what-card p {
-    font-size:1rem;
-  }
-
-  .who h2, .why h2 {
-    font-size:2rem;
-  }
-
-  .who p, .why p {
-    font-size:1.05rem;
-  }
+.who h2,.why h2{font-size:2rem;}
+.who p,.why p{font-size:1.05rem;}
 }
 </style>
 </head>
@@ -294,19 +247,17 @@ footer {
 <body>
 
 <header>
-  <h1>H.O.P.E.</h1>
-  <div class="menu-toggle" id="menu-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <nav id="nav-menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="mission.html">Mission & Vision</a>
-    <a href="success.html">Our Successes</a>
-    <a href="contact.html">Contact Us</a>
-  </nav>
+<h1>H.O.P.E.</h1>
+<div class="menu-toggle" id="menu-toggle">
+<span></span><span></span><span></span>
+</div>
+<nav id="nav-menu">
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="mission.html">Mission & Vision</a>
+<a href="success.html">Our Successes</a>
+<a href="contact.html">Contact Us</a>
+</nav>
 </header>
 
 <section class="hero">
@@ -332,7 +283,6 @@ ethically, and with full responsibility for every rupee and every promise made.
 </div>
 
 <div class="what-grid">
-
 <div class="what-card">
 <div class="what-icon">❤️</div>
 <h3>Medical Assistance</h3>
@@ -358,7 +308,6 @@ when circumstances threaten to force them to stop.
 Every case we support is carefully reviewed so that help reaches exactly where it is meant to go.
 </p>
 </div>
-
 </div>
 </section>
 
@@ -383,10 +332,9 @@ a lack of opportunity.
 </footer>
 
 <script>
-const menuToggle = document.getElementById("menu-toggle");
-const navMenu = document.getElementById("nav-menu");
-
-menuToggle.addEventListener("click", () => {
+const menuToggle=document.getElementById("menu-toggle");
+const navMenu=document.getElementById("nav-menu");
+menuToggle.addEventListener("click",()=>{
   navMenu.classList.toggle("active");
   menuToggle.classList.toggle("active");
 });
