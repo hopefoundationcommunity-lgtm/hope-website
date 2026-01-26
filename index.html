@@ -8,235 +8,276 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+* { box-sizing: border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
 
-body{
-font-family:"Inter",sans-serif;
-background:#f2faf6;
-color:#1f2f27;
+body {
+  font-family:"Inter", sans-serif;
+  background:#f2faf6;
+  color:#1f2f27;
 }
 
 /* HEADER */
-header{
-background:#143f2e;
-padding:18px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:fixed;
-width:100%;
-top:0;
-z-index:200;
+header {
+  background:#143f2e;
+  padding:18px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
 }
 
-header h1{color:white}
+header h1 { color:white; }
 
-/* NAV DESKTOP */
-nav{
-display:flex;
-gap:25px;
+/* NAV */
+nav {
+  display:flex;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-font-weight:500;
-opacity:.9;
+nav a {
+  color:white;
+  margin-left:25px;
+  text-decoration:none;
+  font-weight:500;
+  opacity:.9;
 }
 
 /* HAMBURGER */
-.menu-toggle{
-display:none;
-width:30px;
-height:22px;
-flex-direction:column;
-justify-content:space-between;
-cursor:pointer;
-z-index:300;
+.menu-toggle {
+  display:none;
+  width:34px;
+  height:24px;
+  flex-direction:column;
+  justify-content:space-between;
+  cursor:pointer;
 }
 
-.menu-toggle span{
-height:3px;
-background:white;
-border-radius:2px;
-transition:.45s ease;
+.menu-toggle span {
+  height:3px;
+  background:white;
+  border-radius:2px;
+  transition:transform .35s ease, opacity .2s ease;
 }
 
-/* X animation */
-.menu-toggle.active span:nth-child(1){
-transform:translateY(9px) rotate(45deg);
+/* smoother X */
+.menu-toggle.active span:nth-child(1) {
+  transform:translateY(10px) rotate(45deg);
 }
-.menu-toggle.active span:nth-child(2){
-opacity:0;
+.menu-toggle.active span:nth-child(2) {
+  opacity:0;
 }
-.menu-toggle.active span:nth-child(3){
-transform:translateY(-9px) rotate(-45deg);
-}
-
-/* MOBILE MENU OVERLAY */
-.mobile-nav{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100vh;
-background:#143f2e;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-gap:34px;
-opacity:0;
-pointer-events:none;
-transform:translateY(-20px);
-transition:opacity .45s ease, transform .45s ease;
-z-index:150;
-}
-
-.mobile-nav.active{
-opacity:1;
-pointer-events:auto;
-transform:translateY(0);
-}
-
-.mobile-nav a{
-color:white;
-font-size:1.4rem;
-text-decoration:none;
+.menu-toggle.active span:nth-child(3) {
+  transform:translateY(-10px) rotate(-45deg);
 }
 
 /* SECTIONS */
-section{padding:140px 10%}
+section { padding:120px 10%; }
 
 /* HERO */
-.hero{
-text-align:center;
-background:linear-gradient(#f2faf6,#edf7f1);
+.hero {
+  background:linear-gradient(#f2faf6,#edf7f1);
+  text-align:center;
 }
 
-.hero h2{
-font-family:"Playfair Display",serif;
-font-size:3rem;
-max-width:900px;
-margin:0 auto 26px;
+.hero h2 {
+  font-family:"Playfair Display", serif;
+  font-size:3rem;
+  max-width:900px;
+  margin:0 auto 24px;
 }
 
-.hero p{
-max-width:760px;
-margin:0 auto 45px;
-font-size:1.2rem;
-line-height:1.85;
-color:#3f6152;
+.hero p {
+  max-width:760px;
+  margin:0 auto 45px;
+  font-size:1.25rem;
+  line-height:1.85;
+  color:#3f6152;
 }
 
-.hero-buttons{
-display:flex;
-justify-content:center;
-gap:18px;
-flex-wrap:wrap;
+.hero-buttons {
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
 }
 
-.hero-buttons a{
-padding:16px 38px;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
+.hero-buttons a {
+  padding:16px 38px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
 }
 
-.btn-primary{background:#143f2e;color:white}
-.btn-secondary{border:2px solid #143f2e;color:#143f2e}
+.btn-primary { background:#143f2e; color:white; }
+.btn-secondary { border:2px solid #143f2e; color:#143f2e; }
 
-/* WHAT */
-.what-we-do{background:#edf7f1}
+/* WHAT WE DO */
+.what-we-do { background:#edf7f1; }
 
-.what-header{
-max-width:700px;
-margin-bottom:60px;
+.what-header {
+  max-width:700px;
+  margin-bottom:60px;
 }
 
-.what-header h2{
-font-family:"Playfair Display",serif;
-font-size:2.6rem;
-margin-bottom:18px;
+.what-header h2 {
+  font-family:"Playfair Display", serif;
+  font-size:2.6rem;
+  margin-bottom:18px;
 }
 
-.what-header p{
-font-size:1.15rem;
-line-height:1.8;
-color:#3f6152;
+.what-header p {
+  font-size:1.15rem;
+  line-height:1.8;
+  color:#3f6152;
 }
 
-.what-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:40px;
+.what-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
 }
 
-.what-card{
-background:white;
-border-radius:26px;
-padding:48px 40px;
-box-shadow:0 20px 45px rgba(0,0,0,0.06);
+.what-card {
+  background:white;
+  border-radius:26px;
+  padding:48px 40px;
+  box-shadow:0 20px 45px rgba(0,0,0,0.06);
 }
 
-.what-icon{
-width:56px;
-height:56px;
-border-radius:16px;
-background:#143f2e;
-display:flex;
-align-items:center;
-justify-content:center;
-margin-bottom:24px;
-color:white;
-font-size:1.5rem;
+.what-icon {
+  width:56px;
+  height:56px;
+  border-radius:16px;
+  background:#143f2e;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:24px;
+  color:white;
+  font-size:1.5rem;
 }
 
-.what-card h3{
-font-family:"Playfair Display",serif;
-font-size:1.55rem;
-margin-bottom:14px;
+.what-card h3 {
+  font-family:"Playfair Display", serif;
+  font-size:1.55rem;
+  margin-bottom:14px;
 }
 
-.what-card p{
-font-size:1.05rem;
-line-height:1.7;
-color:#3f6152;
+.what-card p {
+  font-size:1.1rem;
+  line-height:1.7;
+  color:#3f6152;
 }
 
-/* WHO WHY */
-.who,.why{background:#f9fdfb}
+/* WHO / WHY */
+.who, .why { background:#f9fdfb; }
 
-.who h2,.why h2{
-font-family:"Playfair Display",serif;
-font-size:2.5rem;
-margin-bottom:20px;
+.who h2, .why h2 {
+  font-family:"Playfair Display", serif;
+  font-size:2.5rem;
+  margin-bottom:20px;
 }
 
-.who p,.why p{
-max-width:850px;
-font-size:1.1rem;
-line-height:1.85;
-color:#3f6152;
+.who p, .why p {
+  max-width:850px;
+  font-size:1.15rem;
+  line-height:1.85;
+  color:#3f6152;
 }
 
 /* FOOTER */
-footer{
-background:#143f2e;
-color:white;
-text-align:center;
-padding:36px;
+footer {
+  background:#143f2e;
+  color:white;
+  text-align:center;
+  padding:36px;
 }
 
 /* MOBILE */
 @media(max-width:900px){
-nav{display:none}
-.menu-toggle{display:flex}
-section{padding:120px 7%}
-.hero h2{font-size:2rem}
-.hero p{font-size:1.05rem}
-.what-grid{grid-template-columns:1fr}
+
+  header {
+    flex-wrap:wrap;
+    padding:16px 6%;
+  }
+
+  nav {
+    width:100%;
+    flex-direction:column;
+    background:#143f2e;
+    margin-top:14px;
+    padding:18px 0;
+    border-radius:14px;
+
+    opacity:0;
+    transform:translateY(-10px);
+    pointer-events:none;
+    transition:opacity .35s ease, transform .35s ease;
+  }
+
+  nav a {
+    margin:16px 0;
+    text-align:center;
+    font-size:1.15rem;
+    padding:10px 0;
+  }
+
+  nav.active {
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+  }
+
+  .menu-toggle {
+    display:flex;
+  }
+
+  section { padding:90px 7%; }
+
+  .hero h2 {
+    font-size:2rem;
+    line-height:1.25;
+  }
+
+  .hero p {
+    font-size:1.05rem;
+    line-height:1.8;
+  }
+
+  .what-header h2 {
+    font-size:2rem;
+  }
+
+  .what-header p {
+    font-size:1.05rem;
+  }
+
+  .what-grid {
+    grid-template-columns:1fr;
+    gap:32px;
+  }
+
+  .what-card {
+    padding:36px 26px;
+  }
+
+  .what-card h3 {
+    font-size:1.35rem;
+  }
+
+  .what-card p {
+    font-size:1rem;
+  }
+
+  .who h2, .why h2 {
+    font-size:2rem;
+  }
+
+  .who p, .why p {
+    font-size:1.05rem;
+  }
 }
 </style>
 </head>
@@ -244,28 +285,20 @@ section{padding:120px 7%}
 <body>
 
 <header>
-<h1>H.O.P.E.</h1>
-<div class="menu-toggle" id="menu-toggle">
-<span></span>
-<span></span>
-<span></span>
-</div>
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About Us</a>
-<a href="mission.html">Mission & Vision</a>
-<a href="success.html">Our Successes</a>
-<a href="contact.html">Contact Us</a>
-</nav>
+  <h1>H.O.P.E.</h1>
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav id="nav-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="mission.html">Mission & Vision</a>
+    <a href="success.html">Our Successes</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
 </header>
-
-<div class="mobile-nav" id="mobile-nav">
-<a href="index.html">Home</a>
-<a href="about.html">About Us</a>
-<a href="mission.html">Mission & Vision</a>
-<a href="success.html">Our Successes</a>
-<a href="contact.html">Contact Us</a>
-</div>
 
 <section class="hero">
 <h2>Helping people reach healthcare and education when it matters most.</h2>
@@ -283,38 +316,57 @@ between people who want to help and people who urgently need it.
 <section class="what-we-do">
 <div class="what-header">
 <h2>What We Do</h2>
-<p>We focus on situations where support can change the course of a life.</p>
+<p>
+We focus on situations where support can change the course of a life — quietly,
+ethically, and with full responsibility for every rupee and every promise made.
+</p>
 </div>
 
 <div class="what-grid">
+
 <div class="what-card">
 <div class="what-icon">❤️</div>
 <h3>Medical Assistance</h3>
-<p>Helping patients reach treatment when finances stand in the way.</p>
+<p>
+We help patients reach treatment when finances stand in the way — supporting surgeries,
+hospital care, and urgent medical needs.
+</p>
 </div>
 
 <div class="what-card">
 <div class="what-icon">📚</div>
 <h3>Educational Support</h3>
-<p>Helping students continue their studies despite hardship.</p>
+<p>
+We stand beside students whose education is at risk — helping them continue their studies
+when circumstances threaten to force them to stop.
+</p>
 </div>
 
 <div class="what-card">
 <div class="what-icon">✔</div>
 <h3>Case Verification</h3>
-<p>Ensuring help reaches where it truly belongs.</p>
+<p>
+Every case we support is carefully reviewed so that help reaches exactly where it is meant to go.
+</p>
 </div>
+
 </div>
 </section>
 
 <section class="who">
 <h2>Who We Are</h2>
-<p>We are college students from across India who believe access should never depend on money.</p>
+<p>
+We are a group of college students from different parts of India who believe that
+access to healthcare and education should never depend on financial privilege.
+</p>
 </section>
 
 <section class="why">
 <h2>Why This Matters</h2>
-<p>So no one loses their future because of financial limits.</p>
+<p>
+We exist to step in at critical moments — so that a lack of money does not become
+a lack of opportunity.
+</p>
 </section>
 
 <footer>
@@ -322,12 +374,12 @@ between people who want to help and people who urgently need it.
 </footer>
 
 <script>
-const toggle=document.getElementById("menu-toggle");
-const mobileNav=document.getElementById("mobile-nav");
+const menuToggle = document.getElementById("menu-toggle");
+const navMenu = document.getElementById("nav-menu");
 
-toggle.addEventListener("click",()=>{
-toggle.classList.toggle("active");
-mobileNav.classList.toggle("active");
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+  menuToggle.classList.toggle("active");
 });
 </script>
 
