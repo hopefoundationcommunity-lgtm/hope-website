@@ -216,10 +216,19 @@ footer {
     transition:.3s ease;
   }
 
-  nav a {
-    margin:12px 0;
-    text-align:center;
-    font-size:1.05rem;
+  nav {
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    flex-direction:column;
+    background:#143f2e;
+    padding:16px 0;
+    border-radius:0 0 14px 14px;
+    opacity:0;
+    transform:translateY(-10px);
+    pointer-events:none;
+    transition:.3s ease;
   }
 
   nav.active {
