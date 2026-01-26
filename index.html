@@ -31,6 +31,7 @@ header {
 
 header h1 { color:white; }
 
+/* NAV */
 nav {
   display:flex;
 }
@@ -43,11 +44,32 @@ nav a {
   opacity:.9;
 }
 
+/* HAMBURGER */
 .menu-toggle {
   display:none;
-  font-size:2rem;
-  color:white;
+  width:34px;
+  height:24px;
+  flex-direction:column;
+  justify-content:space-between;
   cursor:pointer;
+}
+
+.menu-toggle span {
+  height:3px;
+  background:white;
+  border-radius:2px;
+  transition:.3s;
+}
+
+/* Animate to X */
+.menu-toggle.active span:nth-child(1) {
+  transform:rotate(45deg) translate(5px,5px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity:0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform:rotate(-45deg) translate(6px,-6px);
 }
 
 /* SECTIONS */
@@ -82,7 +104,7 @@ section { padding:120px 10%; }
 }
 
 .hero-buttons a {
-  padding:14px 36px;
+  padding:16px 38px;
   border-radius:30px;
   text-decoration:none;
   font-weight:600;
@@ -133,13 +155,8 @@ section { padding:120px 10%; }
   align-items:center;
   justify-content:center;
   margin-bottom:24px;
-}
-
-.what-icon svg {
-  width:26px;
-  height:26px;
-  stroke:white;
-  fill:none;
+  color:white;
+  font-size:1.5rem;
 }
 
 .what-card h3 {
@@ -192,14 +209,15 @@ footer {
     flex-direction:column;
     background:#143f2e;
     margin-top:14px;
-    padding:14px 0;
+    padding:18px 0;
     border-radius:14px;
   }
 
   nav a {
-    margin:14px 0;
+    margin:16px 0;
     text-align:center;
-    font-size:1.1rem;
+    font-size:1.15rem;
+    padding:10px 0;
   }
 
   nav.active {
@@ -207,7 +225,7 @@ footer {
   }
 
   .menu-toggle {
-    display:block;
+    display:flex;
   }
 
   section { padding:90px 7%; }
@@ -232,11 +250,11 @@ footer {
 
   .what-grid {
     grid-template-columns:1fr;
-    gap:28px;
+    gap:32px;
   }
 
   .what-card {
-    padding:34px 26px;
+    padding:36px 26px;
   }
 
   .what-card h3 {
@@ -262,7 +280,11 @@ footer {
 
 <header>
   <h1>H.O.P.E.</h1>
-  <div class="menu-toggle" id="menu-toggle">☰</div>
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <nav id="nav-menu">
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
@@ -301,7 +323,7 @@ ethically, and with full responsibility for every rupee and every promise made.
 <h3>Medical Assistance</h3>
 <p>
 We help patients reach treatment when finances stand in the way — supporting surgeries,
-hospital care, and urgent medical needs through verified cases.
+hospital care, and urgent medical needs.
 </p>
 </div>
 
@@ -351,6 +373,7 @@ const navMenu = document.getElementById("nav-menu");
 
 menuToggle.addEventListener("click", () => {
   navMenu.classList.toggle("active");
+  menuToggle.classList.toggle("active");
 });
 </script>
 
