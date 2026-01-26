@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us – H.O.P.E.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+font-family:"Inter",sans-serif;
+background:#f2faf6;
+color:#1f2f27;
+}
+
+/* HEADER */
+header{
+background:#143f2e;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:100;
+}
+header h1{color:white}
+
+nav a{
+color:white;
+margin-left:25px;
+text-decoration:none;
+font-weight:500;
+opacity:.85;
+transition:.2s ease;
+}
+nav a:hover{opacity:1}
+
+/* SECTIONS */
+section{padding:100px 10%}
+
+/* HERO */
+.hero{
+text-align:center;
+background:linear-gradient(#f2faf6,#edf7f1);
+padding-bottom:50px; /* FIXED GAP */
+}
+.hero h2{
+font-family:"Playfair Display",serif;
+font-size:3rem;
+max-width:900px;
+margin:0 auto 25px;
+}
+.hero p{
+max-width:760px;
+margin:0 auto 35px;
+font-size:1.25rem;
+line-height:1.85;
+color:#3f6152;
+}
+
+/* BUTTON */
+.cta-button{
+display:inline-block;
+padding:14px 38px;
+border-radius:30px;
+background:#143f2e;
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:.25s cubic-bezier(.4,0,.2,1);
+}
+.cta-button:hover{
+background:#0f3023;
+transform:translateY(-2px);
+}
+
+/* CONTACT BLOCK */
+.contact-block{
+background:#f9fdfb;
+text-align:center;
+padding-top:60px; /* PULL UP SECTION */
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:40px;
+max-width:900px;
+margin:0 auto;
+}
+
+.contact-card{
+background:white;
+padding:40px;
+border-radius:24px;
+box-shadow:0 18px 40px rgba(0,0,0,.06);
+transition:.3s cubic-bezier(.4,0,.2,1);
+}
+.contact-card:hover{
+transform:translateY(-4px);
+box-shadow:0 26px 60px rgba(0,0,0,.1);
+}
+
+.contact-card h3{
+font-family:"Playfair Display",serif;
+font-size:1.6rem;
+margin-bottom:12px;
+}
+.contact-card p{
+font-size:1.1rem;
+color:#4c6b5c;
+}
+
+.contact-card a {
+  text-decoration: none;
+  color: #143f2e;   /* same green as theme */
+  font-weight: 500;
+}
+
+.contact-card a:hover {
+  text-decoration: underline; /* optional: only on hover */
+}
+
+
+/* FOOTER */
+footer{
+background:#143f2e;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+/* REVEAL */
+.reveal{
+opacity:0;
+transform:translateY(20px);
+transition:
+opacity .45s cubic-bezier(.4,0,.2,1),
+transform .45s cubic-bezier(.4,0,.2,1);
+}
+.reveal.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:900px){
+.hero h2{font-size:2.2rem}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>H.O.P.E.</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="mission.html">Mission & Vision</a>
+<a href="success.html">Our Successes</a>
+<a href="contact.html">Contact Us</a>
+</nav>
+</header>
+
+<section class="hero reveal">
+<h2>Contact Us</h2>
+<p>
+If you would like to support our work, collaborate with us, or learn more about our cases,
+we would love to hear from you.
+</p>
+
+<a href="https://forms.gle/your-form-link" class="cta-button" target="_blank">
+Become a Member
+</a>
+</section>
+
+<section class="contact-block reveal">
+
+<div class="contact-grid">
+
+<div class="contact-card">
+<h3>Email</h3>
+<p><a href="hopefoundation.community@gmail.com">Reach out to us</a></p>
+</div>
+
+<div class="contact-card">
+<h3>Instagram</h3>
+<p><a href="https://www.instagram.com/hopefoundation.in/">@hopefoundation.in</a></p>
+</div>
+
+<div class="contact-card">
+<h3>WhatsApp</h3>
+<p><b>+91 8148898377</b></p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 H.O.P.E. Foundation — Student-led, community-driven.
+</footer>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+}else{
+entry.target.classList.remove("visible");
+}
+});
+},{threshold:0.25});
+
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>

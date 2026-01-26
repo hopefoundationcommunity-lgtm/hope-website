@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mission & Vision – H.O.P.E.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family:"Inter", sans-serif;
+  background:#f2faf6;
+  color:#1f2f27;
+}
+
+/* HEADER */
+header {
+  background:#143f2e;
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+header h1 { color:white; }
+
+nav a {
+  color:white;
+  margin-left:25px;
+  text-decoration:none;
+  font-weight:500;
+  opacity:.85;
+  transition:.2s ease;
+}
+nav a:hover { opacity:1; }
+
+/* SECTIONS */
+section { padding:120px 10%; }
+
+/* HERO */
+.hero {
+  text-align:center;
+  background:linear-gradient(#f2faf6,#edf7f1);
+}
+.hero h2 {
+  font-family:"Playfair Display", serif;
+  font-size:3.1rem;
+  max-width:900px;
+  margin:0 auto 30px;
+}
+.hero p {
+  max-width:760px;
+  margin:0 auto;
+  font-size:1.3rem;
+  line-height:1.9;
+  color:#3f6152;
+}
+
+/* CONTENT */
+.content {
+  background:#f9fdfb;
+}
+.block {
+  max-width:900px;
+  margin-bottom:70px;
+}
+.block h3 {
+  font-family:"Playfair Display", serif;
+  font-size:2.4rem;
+  margin-bottom:18px;
+}
+.block p, .block li {
+  font-size:1.2rem;
+  line-height:1.85;
+  color:#3f6152;
+}
+
+/* LIST */
+ul { padding-left:20px; margin-top:10px; }
+li { margin-bottom:10px; }
+
+/* FOOTER */
+footer {
+  background:#143f2e;
+  color:white;
+  text-align:center;
+  padding:40px;
+}
+
+/* REVEAL */
+.reveal {
+  opacity:0;
+  transform:translateY(25px);
+  transition:
+    opacity .45s cubic-bezier(.4,0,.2,1),
+    transform .45s cubic-bezier(.4,0,.2,1);
+}
+
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .hero h2 { font-size:2.2rem; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>H.O.P.E.</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="mission.html">Mission & Vision</a>
+<a href="success.html">Our Successes</a>
+<a href="contact.html">Contact Us</a>
+</nav>
+</header>
+
+<section class="hero reveal">
+<h2>Mission & Vision</h2>
+<p>
+Our purpose is simple: to ensure that healthcare and education remain reachable,
+even when life becomes financially overwhelming.
+</p>
+</section>
+
+<section class="content reveal">
+
+<div class="block">
+<h3>Our Mission</h3>
+<p>
+Our mission is to identify genuine medical and educational cases, verify them ethically,
+and mobilize community support to provide timely assistance to individuals in need.
+We act with care, responsibility, and respect for every person involved.
+</p>
+</div>
+
+<div class="block">
+<h3>Our Vision</h3>
+<p>
+Our vision is to build a transparent, student-driven foundation where no individual
+is denied essential healthcare or education due to financial limitations.
+We aim to create a system where compassion is organized and help reaches faster.
+</p>
+</div>
+
+<div class="block">
+<h3>Our Core Values</h3>
+<ul>
+<li>Transparency in all operations</li>
+<li>Ethical verification of every case</li>
+<li>Responsible and careful use of funds</li>
+<li>Respect for dignity and privacy</li>
+<li>Student leadership and social responsibility</li>
+</ul>
+</div>
+
+</section>
+
+<footer>
+© 2026 H.O.P.E. Foundation — Student-led, community-driven.
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+    }
+  });
+},{ threshold:0.25 });
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

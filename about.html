@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us – H.O.P.E.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+font-family:"Inter",sans-serif;
+background:#f2faf6;
+color:#1f2f27;
+}
+
+/* HEADER */
+header{
+background:#143f2e;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:100;
+}
+header h1{color:white}
+nav a{
+color:white;
+margin-left:25px;
+text-decoration:none;
+font-weight:500;
+opacity:.85;
+transition:.2s ease;
+}
+nav a:hover{opacity:1}
+
+/* SECTIONS */
+section{padding:120px 10%}
+
+/* HERO (PREMIUM) */
+.hero{
+background:linear-gradient(#f2faf6,#edf7f1);
+text-align:center;
+}
+
+.hero-inner{
+max-width:850px;
+margin:auto;
+}
+
+.hero h2{
+font-family:"Playfair Display",serif;
+font-size:3.1rem;
+margin-bottom:28px;
+}
+
+.hero .divider{
+width:70px;
+height:2px;
+background:#143f2e;
+margin:0 auto 28px;
+opacity:.6;
+}
+
+.hero .motto{
+font-family:"Playfair Display",serif;
+font-size:1.4rem;
+color:#3f6152;
+margin-bottom:26px;
+}
+
+.hero .identity{
+display:inline-block;
+padding:9px 22px;
+border-radius:999px;
+border:1px solid rgba(20,63,46,.25);
+font-size:.78rem;
+letter-spacing:.15em;
+text-transform:uppercase;
+color:#143f2e;
+margin-bottom:45px;
+}
+
+.hero p{
+font-size:1.25rem;
+line-height:1.85;
+color:#3f6152;
+}
+
+/* STORY */
+.story{
+background:#f9fdfb;
+}
+.story h3{
+font-family:"Playfair Display",serif;
+font-size:2.5rem;
+margin-bottom:25px;
+}
+.story p{
+max-width:880px;
+font-size:1.18rem;
+line-height:1.85;
+color:#3f6152;
+margin-bottom:45px;
+}
+
+/* VALUES */
+.values{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+margin-top:40px;
+}
+.value-box{
+background:white;
+padding:40px;
+border-radius:22px;
+box-shadow:0 15px 40px rgba(0,0,0,.06);
+transition:.3s cubic-bezier(.4,0,.2,1);
+}
+.value-box:hover{
+transform:translateY(-4px);
+box-shadow:0 22px 55px rgba(0,0,0,.09);
+}
+.value-box h4{
+font-family:"Playfair Display",serif;
+font-size:1.45rem;
+margin-bottom:12px;
+}
+.value-box p{
+font-size:1.08rem;
+line-height:1.7;
+color:#4c6b5c;
+}
+
+/* TEAM */
+.team{
+background:#edf7f1;
+}
+.team h3{
+font-family:"Playfair Display",serif;
+font-size:2.6rem;
+margin-bottom:20px;
+}
+.team p{
+max-width:750px;
+font-size:1.15rem;
+line-height:1.8;
+color:#3f6152;
+margin-bottom:60px;
+}
+
+.team-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:35px;
+}
+
+.team-card{
+background:white;
+border-radius:22px;
+padding:22px;
+box-shadow:0 14px 35px rgba(0,0,0,.07);
+text-align:center;
+transition:.3s cubic-bezier(.4,0,.2,1);
+max-width:260px;
+margin:auto;
+}
+
+.team-card img{
+width:100%;
+aspect-ratio:1 / 1;
+object-fit:cover;
+border-radius:18px;
+margin-bottom:14px;
+}
+
+.team-card h4{
+font-family:"Playfair Display",serif;
+font-size:1.25rem;
+margin-bottom:4px;
+}
+
+.team-card span{
+font-size:.95rem;
+color:#567b6a;
+}
+
+/* FOOTER */
+footer{
+background:#143f2e;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+/* REVEAL */
+.reveal{
+opacity:0;
+transform:translateY(20px);
+transition:
+opacity .45s cubic-bezier(.4,0,.2,1),
+transform .45s cubic-bezier(.4,0,.2,1);
+}
+
+.reveal.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+.hero h2{font-size:2.2rem}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>H.O.P.E.</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="mission.html">Mission & Vision</a>
+<a href="success.html">Our Successes</a>
+<a href="contact.html">Contact Us</a>
+</nav>
+</header>
+
+<section class="hero reveal">
+  <div class="hero-inner">
+    <h2>About H.O.P.E.</h2>
+    <div class="divider"></div>
+    <div class="motto">“Helping Others Prosper and Elevate.”</div>
+    <div class="identity">Student-led · Non-profit Organization</div>
+    <p>
+      <b>H.O.P.E. was created by students who believed that compassion should be organized,
+      and that small, honest efforts can <i>quietly change real lives.</i></b>
+    </p>
+  </div>
+</section>
+
+<section class="story reveal">
+<h3>Our Beginning</h3>
+<p>
+H.O.P.E. began with a single case — one student realizing that help often arrives too late,
+not because people do not care, but because no system exists to connect those who need
+support with those willing to give it. What started as a response to one situation grew
+into a commitment to build something dependable, careful, and ethical.
+</p>
+
+<h3>Who We Are</h3>
+<p>
+We are a student-led foundation working across communities to identify genuine medical
+and educational needs. Every case we take on is verified, reviewed, and handled with
+respect for dignity and privacy. Our work is quiet by design — focused on impact rather
+than attention.
+</p>
+
+<h3>What We Believe</h3>
+<div class="values">
+<div class="value-box">
+<h4>Transparency</h4>
+<p>Every contribution is used with accountability. Trust is earned through honesty.</p>
+</div>
+<div class="value-box">
+<h4>Dignity</h4>
+<p>Help should protect self-respect, never compromise it.</p>
+</div>
+<div class="value-box">
+<h4>Responsibility</h4>
+<p>We act carefully, ethically, and with long-term impact in mind.</p>
+</div>
+<div class="value-box">
+<h4>Community</h4>
+<p>Students, donors, and volunteers form one quiet network of action.</p>
+</div>
+</div>
+</section>
+
+<section class="team reveal">
+<h3>Get to Know the Team</h3>
+<p>
+H.O.P.E. is shaped by the people behind it — students who choose to turn empathy into
+structured action and quiet impact.
+</p>
+
+<div class="team-grid">
+<div class="team-card">
+<img src="team1.jpg" alt="Team member">
+<h4>Harishree</h4>
+<span><b>Founder</b></span>
+</div>
+
+<div class="team-card">
+<img src="team2.jpg" alt="Team member">
+<h4>Rishi</h4>
+<span><b>Core Volunteer</b></span>
+</div>
+
+<div class="team-card">
+<img src="team3.jpg" alt="Team member">
+<h4>Sushil</h4>
+<span><b>Co-Founder</b></span>
+</div>
+</div>
+</section>
+
+<footer>
+© 2026 H.O.P.E. Foundation — Student-led, community-driven.
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+}else{
+entry.target.classList.remove("visible");
+}
+});
+},{threshold:0.25});
+
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>

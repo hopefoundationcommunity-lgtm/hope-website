@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Successes – H.O.P.E.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+font-family:"Inter",sans-serif;
+background:#f2faf6;
+color:#1f2f27;
+}
+
+/* HEADER */
+header{
+background:#143f2e;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:100;
+}
+header h1{color:white}
+
+nav a{
+color:white;
+margin-left:25px;
+text-decoration:none;
+font-weight:500;
+opacity:.85;
+transition:.2s ease;
+}
+nav a:hover{opacity:1}
+
+/* SECTIONS */
+section{padding:120px 10%}
+
+/* HERO */
+.hero{
+text-align:center;
+background:linear-gradient(#f2faf6,#edf7f1);
+}
+.hero h2{
+font-family:"Playfair Display",serif;
+font-size:3rem;
+max-width:900px;
+margin:0 auto 30px;
+}
+.hero p{
+max-width:780px;
+margin:0 auto 25px;
+font-size:1.25rem;
+line-height:1.85;
+color:#3f6152;
+}
+
+/* STORY BLOCK */
+.story{
+background:#f9fdfb;
+}
+.story h3{
+font-family:"Playfair Display",serif;
+font-size:2.4rem;
+margin-bottom:20px;
+}
+.story p{
+max-width:880px;
+font-size:1.18rem;
+line-height:1.85;
+color:#3f6152;
+margin-bottom:30px;
+}
+
+/* PLACEHOLDER CARD */
+.case-card{
+margin-top:60px;
+background:white;
+border-radius:26px;
+padding:50px;
+box-shadow:0 18px 40px rgba(0,0,0,.06);
+max-width:900px;
+}
+.case-card h4{
+font-family:"Playfair Display",serif;
+font-size:1.6rem;
+margin-bottom:15px;
+}
+.case-card p{
+font-size:1.1rem;
+line-height:1.8;
+color:#4c6b5c;
+}
+
+/* FOOTER */
+footer{
+background:#143f2e;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+/* REVEAL */
+.reveal{
+opacity:0;
+transform:translateY(20px);
+transition:
+opacity .45s cubic-bezier(.4,0,.2,1),
+transform .45s cubic-bezier(.4,0,.2,1);
+}
+.reveal.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:900px){
+.hero h2{font-size:2.2rem}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>H.O.P.E.</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="mission.html">Mission & Vision</a>
+<a href="success.html">Our Successes</a>
+<a href="contact.html">Contact Us</a>
+</nav>
+</header>
+
+<section class="hero reveal">
+<h2>Our Success Stories</h2>
+<p>
+Every case we support represents a real person, a real family, and a real moment of need.
+Our work is measured not in numbers, but in lives quietly changed.
+</p>
+</section>
+
+<section class="story reveal">
+<h3>Our First Supported Case</h3>
+<p>
+In our first supported case, H.O.P.E. Foundation helped a patient suffering from a serious
+medical condition by raising funds for their surgery. Through collective effort and careful
+verification, the treatment was completed successfully.
+</p>
+
+<p>
+The patient is currently recovering, and their family has been able to return to daily life
+with renewed stability and hope.
+</p>
+
+<div class="case-card reveal">
+<h4>Case Details (Coming Soon)</h4>
+<p>
+Photographs, documents, and a full account of this case will be added here once consent
+and final records are prepared. Transparency and dignity remain our guiding principles.
+</p>
+</div>
+</section>
+
+<footer>
+© 2026 H.O.P.E. Foundation — Student-led, community-driven.
+</footer>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible")
+}else{
+entry.target.classList.remove("visible")
+}
+})
+},{threshold:0.25})
+
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el))
+</script>
+
+</body>
+</html>
