@@ -8,85 +8,107 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-* { box-sizing:border-box; margin:0; padding:0; }
-html { scroll-behavior:smooth; }
-
-body {
-  font-family:"Inter", sans-serif;
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"Inter",sans-serif;
   background:#f2faf6;
   color:#1f2f27;
 }
 
 /* HEADER */
-header {
+header{
   background:#143f2e;
-  padding:20px 8%;
+  padding:18px 8%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  position:sticky;
+  position:fixed;
   top:0;
+  width:100%;
   z-index:100;
+  height:78px;
 }
-header h1 { color:white; }
+header h1{color:white;font-size:1.6rem}
 
-nav a {
+/* NAV DESKTOP */
+nav{display:flex;}
+nav a{
   color:white;
   margin-left:25px;
   text-decoration:none;
   font-weight:500;
-  opacity:.85;
-  transition:.2s ease;
+  opacity:.9;
 }
-nav a:hover { opacity:1; }
+
+/* HAMBURGER */
+.menu-toggle{
+  display:none;
+  width:36px;
+  height:26px;
+  flex-direction:column;
+  justify-content:space-between;
+  cursor:pointer;
+}
+.menu-toggle span{
+  height:3px;
+  background:white;
+  border-radius:2px;
+  transition:.35s ease;
+}
+.menu-toggle.active span:nth-child(1){
+  transform:translateY(11px) rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2){opacity:0;}
+.menu-toggle.active span:nth-child(3){
+  transform:translateY(-11px) rotate(-45deg);
+}
 
 /* SECTIONS */
-section { padding:120px 10%; }
+section{padding:160px 10% 140px}
 
 /* HERO */
-.hero {
+.hero{
   text-align:center;
   background:linear-gradient(#f2faf6,#edf7f1);
 }
-.hero h2 {
-  font-family:"Playfair Display", serif;
-  font-size:3.1rem;
+.hero h2{
+  font-family:"Playfair Display",serif;
+  font-size:3rem;
   max-width:900px;
-  margin:0 auto 30px;
+  margin:0 auto 26px;
 }
-.hero p {
+.hero p{
   max-width:760px;
   margin:0 auto;
-  font-size:1.3rem;
-  line-height:1.9;
+  font-size:1.25rem;
+  line-height:1.8;
   color:#3f6152;
 }
 
 /* CONTENT */
-.content {
-  background:#f9fdfb;
-}
-.block {
+.content{background:#f9fdfb;}
+.block{
   max-width:900px;
-  margin-bottom:70px;
+  margin-bottom:60px;
 }
-.block h3 {
-  font-family:"Playfair Display", serif;
-  font-size:2.4rem;
-  margin-bottom:18px;
+.block h3{
+  font-family:"Playfair Display",serif;
+  font-size:2.3rem;
+  margin-bottom:16px;
 }
-.block p, .block li {
-  font-size:1.2rem;
-  line-height:1.85;
+.block p, .block li{
+  font-size:1.15rem;
+  line-height:1.8;
   color:#3f6152;
 }
 
 /* LIST */
-ul { padding-left:20px; margin-top:10px; }
-li { margin-bottom:10px; }
+ul{padding-left:20px;margin-top:12px;}
+li{margin-bottom:10px;}
 
 /* FOOTER */
-footer {
+footer{
   background:#143f2e;
   color:white;
   text-align:center;
@@ -94,22 +116,57 @@ footer {
 }
 
 /* REVEAL */
-.reveal {
+.reveal{
   opacity:0;
   transform:translateY(25px);
-  transition:
-    opacity .45s cubic-bezier(.4,0,.2,1),
-    transform .45s cubic-bezier(.4,0,.2,1);
+  transition:.45s cubic-bezier(.4,0,.2,1);
 }
-
-.reveal.visible {
+.reveal.visible{
   opacity:1;
   transform:translateY(0);
 }
 
 /* MOBILE */
 @media(max-width:900px){
-  .hero h2 { font-size:2.2rem; }
+
+header{padding:16px 6%;}
+.menu-toggle{display:flex;z-index:200;}
+
+/* FULLSCREEN MENU */
+nav{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(180deg,#143f2e,#0f2f22);
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:30px;
+  opacity:0;
+  pointer-events:none;
+  transition:.35s ease;
+  z-index:150;
+}
+nav.active{
+  opacity:1;
+  pointer-events:auto;
+}
+nav a{
+  margin:0;
+  font-size:1.5rem;
+  padding:16px 50px;
+  border-radius:999px;
+}
+
+/* SECTION SPACING */
+section{padding:120px 8% 90px}
+
+/* HERO */
+.hero h2{font-size:2.2rem;}
+.hero p{font-size:1.05rem;line-height:1.7;}
+
+/* CONTENT */
+.block h3{font-size:2rem;}
+.block p, .block li{font-size:1.05rem;}
 }
 </style>
 </head>
@@ -118,7 +175,10 @@ footer {
 
 <header>
 <h1>H.O.P.E.</h1>
-<nav>
+<div class="menu-toggle" id="menu-toggle">
+<span></span><span></span><span></span>
+</div>
+<nav id="nav-menu">
 <a href="index.html">Home</a>
 <a href="about.html">About Us</a>
 <a href="mission.html">Mission & Vision</a>
@@ -173,15 +233,31 @@ We aim to create a system where compassion is organized and help reaches faster.
 </footer>
 
 <script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add("visible");
     }
   });
-},{ threshold:0.25 });
+},{threshold:0.25});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+const menuToggle=document.getElementById("menu-toggle");
+const navMenu=document.getElementById("nav-menu");
+
+menuToggle.addEventListener("click",()=>{
+  navMenu.classList.toggle("active");
+  menuToggle.classList.toggle("active");
+  document.body.style.overflow = navMenu.classList.contains("active") ? "hidden" : "auto";
+});
+
+document.querySelectorAll("nav a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    navMenu.classList.remove("active");
+    menuToggle.classList.remove("active");
+    document.body.style.overflow="auto";
+  });
+});
 </script>
 
 </body>
