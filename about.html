@@ -19,32 +19,53 @@ color:#1f2f27;
 /* HEADER */
 header{
 background:#143f2e;
-padding:20px 8%;
+padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-position:sticky;
+position:fixed;
 top:0;
+width:100%;
 z-index:100;
-flex-wrap:wrap;
+height:78px;
 }
-header h1{color:white}
-nav{
-display:flex;
-flex-wrap:wrap;
-gap:12px;
-}
+header h1{color:white;font-size:1.6rem}
+
+/* NAV DESKTOP */
+nav{display:flex;}
 nav a{
 color:white;
+margin-left:25px;
 text-decoration:none;
 font-weight:500;
-opacity:.85;
-font-size:0.95rem;
+opacity:.9;
 }
-nav a:hover{opacity:1}
+
+/* HAMBURGER */
+.menu-toggle{
+display:none;
+width:36px;
+height:26px;
+flex-direction:column;
+justify-content:space-between;
+cursor:pointer;
+}
+.menu-toggle span{
+height:3px;
+background:white;
+border-radius:2px;
+transition:.35s ease;
+}
+.menu-toggle.active span:nth-child(1){
+transform:translateY(11px) rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2){opacity:0;}
+.menu-toggle.active span:nth-child(3){
+transform:translateY(-11px) rotate(-45deg);
+}
 
 /* SECTIONS */
-section{padding:120px 10%}
+section{padding:160px 10% 140px}
 
 /* HERO */
 .hero{
@@ -57,8 +78,8 @@ margin:auto;
 }
 .hero h2{
 font-family:"Playfair Display",serif;
-font-size:3.1rem;
-margin-bottom:18px;
+font-size:3rem;
+margin-bottom:22px;
 }
 .hero .divider{
 width:70px;
@@ -69,31 +90,29 @@ opacity:.6;
 }
 .hero .motto{
 font-family:"Playfair Display",serif;
-font-size:1.4rem;
+font-size:1.35rem;
 color:#3f6152;
-margin-bottom:22px;
+margin-bottom:18px;
 }
 .hero .identity{
 display:inline-block;
 padding:9px 22px;
 border-radius:999px;
 border:1px solid rgba(20,63,46,.25);
-font-size:.78rem;
+font-size:.75rem;
 letter-spacing:.15em;
 text-transform:uppercase;
 color:#143f2e;
-margin-bottom:40px;
+margin-bottom:36px;
 }
 .hero p{
-font-size:1.25rem;
+font-size:1.2rem;
 line-height:1.8;
 color:#3f6152;
 }
 
 /* STORY */
-.story{
-background:#f9fdfb;
-}
+.story{background:#f9fdfb;}
 .story h3{
 font-family:"Playfair Display",serif;
 font-size:2.4rem;
@@ -101,7 +120,7 @@ margin-bottom:22px;
 }
 .story p{
 max-width:880px;
-font-size:1.15rem;
+font-size:1.12rem;
 line-height:1.8;
 color:#3f6152;
 margin-bottom:40px;
@@ -111,14 +130,14 @@ margin-bottom:40px;
 .values{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:35px;
+gap:36px;
 margin-top:30px;
 }
 .value-box{
 background:white;
-padding:36px;
+padding:38px;
 border-radius:22px;
-box-shadow:0 12px 30px rgba(0,0,0,.06);
+box-shadow:0 15px 40px rgba(0,0,0,.06);
 }
 .value-box h4{
 font-family:"Playfair Display",serif;
@@ -132,46 +151,44 @@ color:#4c6b5c;
 }
 
 /* TEAM */
-.team{
-background:#edf7f1;
-}
+.team{background:#edf7f1;}
 .team h3{
 font-family:"Playfair Display",serif;
-font-size:2.4rem;
+font-size:2.5rem;
 margin-bottom:18px;
 }
 .team p{
 max-width:750px;
 font-size:1.1rem;
-line-height:1.75;
+line-height:1.7;
 color:#3f6152;
 margin-bottom:50px;
 }
 .team-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:32px;
 }
 .team-card{
 background:white;
-border-radius:20px;
-padding:18px;
-box-shadow:0 12px 28px rgba(0,0,0,.07);
+border-radius:22px;
+padding:20px;
+box-shadow:0 14px 35px rgba(0,0,0,.07);
 text-align:center;
-max-width:230px;
+max-width:260px;
 margin:auto;
 }
 .team-card img{
 width:100%;
 aspect-ratio:1 / 1;
 object-fit:cover;
-border-radius:16px;
-margin-bottom:10px;
+border-radius:18px;
+margin-bottom:14px;
 }
 .team-card h4{
 font-family:"Playfair Display",serif;
-font-size:1.15rem;
-margin-bottom:3px;
+font-size:1.2rem;
+margin-bottom:4px;
 }
 .team-card span{
 font-size:.9rem;
@@ -183,41 +200,55 @@ footer{
 background:#143f2e;
 color:white;
 text-align:center;
-padding:36px;
-font-size:.9rem;
-}
-
-/* REVEAL */
-.reveal{
-opacity:0;
-transform:translateY(20px);
-transition:.45s cubic-bezier(.4,0,.2,1);
-}
-.reveal.visible{
-opacity:1;
-transform:translateY(0);
+padding:40px;
 }
 
 /* MOBILE */
 @media(max-width:900px){
 
-section{padding:90px 8%}
+header{padding:16px 6%;}
+.menu-toggle{display:flex;z-index:200;}
 
+/* FULLSCREEN MENU */
+nav{
+position:fixed;
+inset:0;
+background:linear-gradient(180deg,#143f2e,#0f2f22);
+flex-direction:column;
+justify-content:center;
+align-items:center;
+gap:30px;
+opacity:0;
+pointer-events:none;
+transition:.35s ease;
+z-index:150;
+}
+nav.active{
+opacity:1;
+pointer-events:auto;
+}
+nav a{
+margin:0;
+font-size:1.5rem;
+padding:16px 50px;
+border-radius:999px;
+}
+
+/* SECTION SPACING */
+section{padding:120px 8% 90px}
+
+/* HERO */
 .hero h2{font-size:2.2rem}
-.hero .motto{font-size:1.2rem}
+.hero .motto{font-size:1.15rem}
 .hero p{font-size:1.05rem;line-height:1.7}
 
+/* STORY */
 .story h3{font-size:2rem}
-.story p{font-size:1.05rem;line-height:1.7}
+.story p{font-size:1.05rem}
 
-.value-box{padding:28px}
-.value-box h4{font-size:1.25rem}
-.value-box p{font-size:1rem}
-
+/* TEAM */
 .team h3{font-size:2rem}
 .team p{font-size:1.05rem}
-.team-grid{gap:24px}
-
 }
 </style>
 </head>
@@ -226,7 +257,10 @@ section{padding:90px 8%}
 
 <header>
 <h1>H.O.P.E.</h1>
-<nav>
+<div class="menu-toggle" id="menu-toggle">
+<span></span><span></span><span></span>
+</div>
+<nav id="nav-menu">
 <a href="index.html">Home</a>
 <a href="about.html">About Us</a>
 <a href="mission.html">Mission & Vision</a>
@@ -235,81 +269,59 @@ section{padding:90px 8%}
 </nav>
 </header>
 
-<section class="hero reveal">
-  <div class="hero-inner">
-    <h2>About H.O.P.E.</h2>
-    <div class="divider"></div>
-    <div class="motto">“Helping Others Prosper and Elevate.”</div>
-    <div class="identity">Student-led · Non-profit Organization</div>
-    <p>
-      <b>H.O.P.E. was created by students who believed that compassion should be organized,
-      and that small, honest efforts can <i>quietly change real lives.</i></b>
-    </p>
-  </div>
+<section class="hero">
+<div class="hero-inner">
+<h2>About H.O.P.E.</h2>
+<div class="divider"></div>
+<div class="motto">“Helping Others Prosper and Elevate.”</div>
+<div class="identity">Student-led · Non-profit Organization</div>
+<p>
+<b>H.O.P.E. was created by students who believed that compassion should be organized,
+and that small, honest efforts can <i>quietly change real lives.</i></b>
+</p>
+</div>
 </section>
 
-<section class="story reveal">
+<section class="story">
 <h3>Our Beginning</h3>
 <p>
 H.O.P.E. began with a single case — one student realizing that help often arrives too late,
 not because people do not care, but because no system exists to connect those who need
-support with those willing to give it. What started as a response to one situation grew
-into a commitment to build something dependable, careful, and ethical.
+support with those willing to give it.
 </p>
 
 <h3>Who We Are</h3>
 <p>
 We are a student-led foundation working across communities to identify genuine medical
 and educational needs. Every case we take on is verified, reviewed, and handled with
-respect for dignity and privacy. Our work is quiet by design — focused on impact rather
-than attention.
+respect for dignity and privacy.
 </p>
 
 <h3>What We Believe</h3>
 <div class="values">
-<div class="value-box">
-<h4>Transparency</h4>
-<p>Every contribution is used with accountability. Trust is earned through honesty.</p>
-</div>
-<div class="value-box">
-<h4>Dignity</h4>
-<p>Help should protect self-respect, never compromise it.</p>
-</div>
-<div class="value-box">
-<h4>Responsibility</h4>
-<p>We act carefully, ethically, and with long-term impact in mind.</p>
-</div>
-<div class="value-box">
-<h4>Community</h4>
-<p>Students, donors, and volunteers form one quiet network of action.</p>
-</div>
+<div class="value-box"><h4>Transparency</h4><p>Trust is earned through honesty.</p></div>
+<div class="value-box"><h4>Dignity</h4><p>Help should protect self-respect.</p></div>
+<div class="value-box"><h4>Responsibility</h4><p>We act carefully and ethically.</p></div>
+<div class="value-box"><h4>Community</h4><p>One quiet network of action.</p></div>
 </div>
 </section>
 
-<section class="team reveal">
+<section class="team">
 <h3>Get to Know the Team</h3>
-<p>
-H.O.P.E. is shaped by the people behind it — students who choose to turn empathy into
-structured action and quiet impact.
-</p>
+<p>H.O.P.E. is shaped by the people behind it.</p>
 
 <div class="team-grid">
 <div class="team-card">
-<img src="team1.jpg" alt="Team member">
-<h4>Harishree</h4>
-<span><b>Founder</b></span>
+<img src="team1.jpg">
+<h4>Harishree</h4><span><b>Founder</b></span>
 </div>
-
 <div class="team-card">
-<img src="team2.jpg" alt="Team member">
-<h4>Rishi</h4>
-<span><b>Core Volunteer</b></span>
+<img src="team2.jpg">
+<h4>Rishi</h4><span><b>Core Volunteer</b></span>
 </div>
-
 <div class="team-card">
-<img src="team3.jpg" alt="Team member">
-<h4>Sushil</h4>
-<span><b>Co-Founder</b></span>
+<img src="team3.jpg">
+<h4>Sushil</h4><span><b>Co-Founder</b></span>
 </div>
 </div>
 </section>
@@ -319,15 +331,22 @@ structured action and quiet impact.
 </footer>
 
 <script>
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("visible");
-}
-});
-},{threshold:0.2});
+const menuToggle=document.getElementById("menu-toggle");
+const navMenu=document.getElementById("nav-menu");
 
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+menuToggle.addEventListener("click",()=>{
+  navMenu.classList.toggle("active");
+  menuToggle.classList.toggle("active");
+  document.body.style.overflow = navMenu.classList.contains("active") ? "hidden" : "auto";
+});
+
+document.querySelectorAll("nav a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    navMenu.classList.remove("active");
+    menuToggle.classList.remove("active");
+    document.body.style.overflow="auto";
+  });
+});
 </script>
 
 </body>
