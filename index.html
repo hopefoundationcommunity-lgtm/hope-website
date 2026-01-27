@@ -16,51 +16,34 @@ body{
   color:#1f2f27;
 }
 
-/* ===== BASE = MOBILE ===== */
-
 /* HEADER */
 header{
   background:#143f2e;
-  padding:16px 6%;
+  padding:18px 8%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  position:sticky;
-  top:0;
-  z-index:100;
-}
-header h1{color:white;font-size:1.4rem}
-.logo{color:white;text-decoration:none}
-
-/* NAV */
-nav{
   position:fixed;
-  inset:0;
-  background:linear-gradient(180deg,#143f2e,#0f2f22);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  gap:28px;
-  opacity:0;
-  pointer-events:none;
-  transition:.35s ease;
+  top:0;
+  width:100%;
+  z-index:100;
+  height:78px;
 }
-nav.active{
-  opacity:1;
-  pointer-events:auto;
-}
+header h1{color:white;font-size:1.6rem}
+
+/* NAV DESKTOP */
+nav{display:flex;}
 nav a{
   color:white;
-  font-size:1.5rem;
+  margin-left:25px;
   text-decoration:none;
-  padding:14px 46px;
-  border-radius:999px;
+  font-weight:500;
+  opacity:.9;
 }
 
 /* HAMBURGER */
 .menu-toggle{
-  display:flex;
+  display:none;
   width:36px;
   height:26px;
   flex-direction:column;
@@ -82,84 +65,91 @@ nav a{
 }
 
 /* SECTIONS */
-section{padding:120px 8% 90px;}
+section{padding:160px 10% 140px;}
 
 /* HERO */
 .hero{
   background:linear-gradient(#f2faf6,#edf7f1);
   text-align:center;
-  min-height:80vh;
-  padding-top:160px;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-top:140px;
 }
 .hero h2{
   font-family:"Playfair Display",serif;
-  font-size:2.2rem;
-  line-height:1.3;
-  margin-bottom:24px;
+  font-size:3rem;
+  max-width:900px;
+  margin:0 auto 30px;
+  line-height:1.25;
 }
 .hero p{
-  font-size:1.05rem;
-  line-height:1.7;
+  max-width:760px;
+  margin:0 auto 70px;
+  font-size:1.25rem;
+  line-height:2;
   color:#3f6152;
-  margin-bottom:50px;
 }
 .hero-buttons{
   display:flex;
-  flex-direction:column;
-  gap:16px;
+  justify-content:center;
+  gap:22px;
+  flex-wrap:wrap;
 }
 .hero-buttons a{
-  padding:16px 50px;
+  padding:20px 52px;
   border-radius:40px;
   text-decoration:none;
   font-weight:600;
-  font-size:1rem;
+  font-size:1.05rem;
 }
 .btn-primary{background:#143f2e;color:white;}
 .btn-secondary{border:2px solid #143f2e;color:#143f2e;}
 
 /* WHAT WE DO */
 .what-we-do{background:#edf7f1;}
+.what-header{max-width:720px;margin-bottom:90px;}
 .what-header h2{
   font-family:"Playfair Display",serif;
-  font-size:2rem;
-  margin-bottom:16px;
+  font-size:2.6rem;
+  margin-bottom:20px;
 }
 .what-header p{
-  font-size:1.05rem;
-  line-height:1.8;
+  font-size:1.15rem;
+  line-height:2;
   color:#3f6152;
 }
 .what-grid{
   display:grid;
-  grid-template-columns:1fr;
-  gap:42px;
+  grid-template-columns:repeat(3,1fr);
+  gap:50px;
 }
 .what-card{
   background:white;
-  border-radius:26px;
-  padding:42px 30px;
+  border-radius:28px;
+  padding:56px 44px;
   box-shadow:0 20px 45px rgba(0,0,0,0.06);
 }
 .what-icon{
-  width:56px;height:56px;
+  width:58px;height:58px;
   border-radius:16px;
   background:#143f2e;
   display:flex;
   align-items:center;
   justify-content:center;
-  margin-bottom:24px;
+  margin-bottom:28px;
   color:white;
   font-size:1.5rem;
 }
 .what-card h3{
   font-family:"Playfair Display",serif;
-  font-size:1.4rem;
-  margin-bottom:12px;
+  font-size:1.6rem;
+  margin-bottom:16px;
 }
 .what-card p{
-  font-size:1.05rem;
-  line-height:1.7;
+  font-size:1.1rem;
+  line-height:1.9;
   color:#3f6152;
 }
 
@@ -167,12 +157,13 @@ section{padding:120px 8% 90px;}
 .who,.why{background:#f9fdfb;}
 .who h2,.why h2{
   font-family:"Playfair Display",serif;
-  font-size:2rem;
-  margin-bottom:20px;
+  font-size:2.5rem;
+  margin-bottom:22px;
 }
 .who p,.why p{
-  font-size:1.05rem;
-  line-height:1.7;
+  max-width:850px;
+  font-size:1.15rem;
+  line-height:2;
   color:#3f6152;
 }
 
@@ -181,71 +172,77 @@ footer{
   background:#143f2e;
   color:white;
   text-align:center;
-  padding:36px;
+  padding:50px;
 }
 
-/* ===== DESKTOP ONLY ===== */
-@media(min-width:901px){
+/* MOBILE */
+@media(max-width:900px){
 
-.menu-toggle{display:none;}
+header{
+  padding:18px 6%;
+}
+
+.menu-toggle{display:flex;z-index:200;}
+
+/* FULLSCREEN MENU */
 nav{
-  position:static;
-  flex-direction:row;
-  background:none;
+  position:fixed;
+  inset:0;
+  background:linear-gradient(180deg,#143f2e,#0f2f22);
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:34px;
+  opacity:0;
+  pointer-events:none;
+  transition:.35s ease;
+  z-index:150;
+}
+nav.active{
   opacity:1;
   pointer-events:auto;
 }
 nav a{
-  margin-left:25px;
-  font-size:1rem;
-  padding:0;
+  margin:0;
+  font-size:1.7rem;
+  padding:18px 60px;
+  border-radius:999px;
 }
 
-section{padding:120px 10%;}
+/* HERO */
+section{padding:140px 8% 120px;}
 
 .hero{
-  min-height:auto;
-  padding-top:0;
+  min-height:100vh;
+  padding-top:160px;
 }
 .hero h2{
-  font-size:3.1rem;
-  max-width:900px;
-  margin:0 auto 30px;
+  font-size:2.3rem;
+  line-height:1.35;
 }
 .hero p{
-  max-width:760px;
-  margin:0 auto 55px;
-  font-size:1.3rem;
-}
-.hero-buttons{
-  flex-direction:row;
-  justify-content:center;
-}
-
-.what-header{
-  max-width:700px;
+  font-size:1.1rem;
+  line-height:2;
   margin-bottom:80px;
 }
-.what-header h2{font-size:2.9rem;}
-.what-header p{font-size:1.2rem;}
+.hero-buttons a{
+  padding:20px 60px;
+  font-size:1.05rem;
+}
 
+/* STACKED GRID */
 .what-grid{
-  grid-template-columns:repeat(3,1fr);
-  gap:45px;
+  grid-template-columns:1fr;
+  gap:48px;
 }
 .what-card{
-  padding:52px 42px;
+  padding:46px 32px;
 }
-.what-card h3{font-size:1.6rem;}
-.what-card p{font-size:1.15rem;}
+.what-card h3{font-size:1.4rem;}
+.what-card p{font-size:1.05rem;}
 
-.who h2,.why h2{font-size:2.7rem;}
-.who p,.why p{
-  max-width:850px;
-  font-size:1.2rem;
-  line-height:1.85;
-}
-
+.who h2,.why h2{font-size:2rem;}
+.who p,.why p{font-size:1.05rem;}
 }
 </style>
 </head>
@@ -253,7 +250,7 @@ section{padding:120px 10%;}
 <body>
 
 <header>
-<h1><a href="index.html" class="logo">H.O.P.E.</a></h1>
+<h1>H.O.P.E.</h1>
 <div class="menu-toggle" id="menu-toggle">
 <span></span><span></span><span></span>
 </div>
@@ -269,7 +266,9 @@ section{padding:120px 10%;}
 <section class="hero">
 <h2>Helping people reach healthcare and education when it matters most.</h2>
 <p>
-H.O.P.E. is a student-led foundation built on trust, compassion, and purpose. We focus on addressing real medical and educational challenges while inspiring young people to step forward as active contributors to social change.
+H.O.P.E. is a student-led foundation built on trust, compassion, and careful action.  
+We work to identify real medical and educational needs, and gently bridge the gap
+between people who want to help and people who urgently need it.
 </p>
 <div class="hero-buttons">
 <a href="mission.html" class="btn-primary">Discover our mission</a>
@@ -281,7 +280,8 @@ H.O.P.E. is a student-led foundation built on trust, compassion, and purpose. We
 <div class="what-header">
 <h2>What We Do</h2>
 <p>
-Our role is to take responsibility for the full journey of support — from recognizing authentic cases in need, to directing funds and resources so that help reaches the right place without delay.
+We focus on situations where support can change the course of a life — quietly,
+ethically, and with full responsibility for every rupee and every promise made.
 </p>
 </div>
 
@@ -289,19 +289,27 @@ Our role is to take responsibility for the full journey of support — from reco
 <div class="what-card">
 <div class="what-icon">❤️</div>
 <h3>Medical Assistance</h3>
-<p>We raise funds to support urgent medical treatment.</p>
+<p>
+We help patients reach treatment when finances stand in the way — supporting surgeries,
+hospital care, and urgent medical needs.
+</p>
 </div>
 
 <div class="what-card">
 <div class="what-icon">📚</div>
 <h3>Educational Support</h3>
-<p>We provide financial assistance so students can continue their education.</p>
+<p>
+We stand beside students whose education is at risk — helping them continue their studies
+when circumstances threaten to force them to stop.
+</p>
 </div>
 
 <div class="what-card">
 <div class="what-icon">✔</div>
 <h3>Case Verification</h3>
-<p>Each case is verified before any funds are distributed.</p>
+<p>
+Every case we support is carefully reviewed so that help reaches exactly where it is meant to go.
+</p>
 </div>
 </div>
 </section>
@@ -309,14 +317,16 @@ Our role is to take responsibility for the full journey of support — from reco
 <section class="who">
 <h2>Who We Are</h2>
 <p>
-We are a student-led foundation formed by college students from different parts of India who believe that access to healthcare and education should not depend on financial background.
+We are a group of college students from different parts of India who believe that
+access to healthcare and education should never depend on financial privilege.
 </p>
 </section>
 
 <section class="why">
 <h2>Why This Matters</h2>
 <p>
-We intervene so financial hardship does not become lifelong disadvantage.
+We exist to step in at critical moments — so that a lack of money does not become
+a lack of opportunity.
 </p>
 </section>
 
@@ -327,19 +337,9 @@ We intervene so financial hardship does not become lifelong disadvantage.
 <script>
 const menuToggle=document.getElementById("menu-toggle");
 const navMenu=document.getElementById("nav-menu");
-
 menuToggle.addEventListener("click",()=>{
   navMenu.classList.toggle("active");
   menuToggle.classList.toggle("active");
-  document.body.style.overflow=navMenu.classList.contains("active")?"hidden":"auto";
-});
-
-document.querySelectorAll("nav a").forEach(link=>{
-  link.addEventListener("click",()=>{
-    navMenu.classList.remove("active");
-    menuToggle.classList.remove("active");
-    document.body.style.overflow="auto";
-  });
 });
 </script>
 
