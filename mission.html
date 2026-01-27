@@ -187,7 +187,8 @@ section{padding:120px 8% 90px}
 </nav>
 </header>
 
-<section class="hero reveal">
+<!-- HERO SHOULD NOT REVEAL -->
+<section class="hero">
 <h2>Mission & Vision</h2>
 <p>
 Our purpose is simple: to ensure that healthcare and education remain reachable,
@@ -237,9 +238,11 @@ const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
     }
   });
-},{threshold:0.25});
+},{threshold:0.15});
+
 document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
 const menuToggle=document.getElementById("menu-toggle");
