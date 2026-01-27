@@ -238,32 +238,44 @@ and final records are prepared. Transparency and dignity remain our guiding prin
 </footer>
 
 <script>
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("visible");
-observer.unobserve(entry.target);
-}
-});
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
 },{threshold:0.25});
 
 document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
+/* FORCE REVEAL ON FIRST LOAD (prevents blank screen) */
+window.addEventListener("load",()=>{
+  document.querySelectorAll(".reveal").forEach(el=>{
+    const rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight){
+      el.classList.add("visible");
+      observer.unobserve(el);
+    }
+  });
+});
+
+/* MENU */
 const menuToggle=document.getElementById("menu-toggle");
 const navMenu=document.getElementById("nav-menu");
 
 menuToggle.addEventListener("click",()=>{
-navMenu.classList.toggle("active");
-menuToggle.classList.toggle("active");
-document.body.style.overflow = navMenu.classList.contains("active") ? "hidden" : "auto";
+  navMenu.classList.toggle("active");
+  menuToggle.classList.toggle("active");
+  document.body.style.overflow = navMenu.classList.contains("active") ? "hidden" : "auto";
 });
 
 document.querySelectorAll("nav a").forEach(link=>{
-link.addEventListener("click",()=>{
-navMenu.classList.remove("active");
-menuToggle.classList.remove("active");
-document.body.style.overflow="auto";
-});
+  link.addEventListener("click",()=>{
+    navMenu.classList.remove("active");
+    menuToggle.classList.remove("active");
+    document.body.style.overflow="auto";
+  });
 });
 </script>
 
