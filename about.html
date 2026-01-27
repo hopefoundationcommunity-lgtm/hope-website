@@ -26,53 +26,53 @@ align-items:center;
 position:sticky;
 top:0;
 z-index:100;
+flex-wrap:wrap;
 }
 header h1{color:white}
+nav{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+}
 nav a{
 color:white;
-margin-left:25px;
 text-decoration:none;
 font-weight:500;
 opacity:.85;
-transition:.2s ease;
+font-size:0.95rem;
 }
 nav a:hover{opacity:1}
 
 /* SECTIONS */
 section{padding:120px 10%}
 
-/* HERO (PREMIUM) */
+/* HERO */
 .hero{
 background:linear-gradient(#f2faf6,#edf7f1);
 text-align:center;
 }
-
 .hero-inner{
 max-width:850px;
 margin:auto;
 }
-
 .hero h2{
 font-family:"Playfair Display",serif;
 font-size:3.1rem;
-margin-bottom:28px;
+margin-bottom:18px;
 }
-
 .hero .divider{
 width:70px;
 height:2px;
 background:#143f2e;
-margin:0 auto 28px;
+margin:0 auto 22px;
 opacity:.6;
 }
-
 .hero .motto{
 font-family:"Playfair Display",serif;
 font-size:1.4rem;
 color:#3f6152;
-margin-bottom:26px;
+margin-bottom:22px;
 }
-
 .hero .identity{
 display:inline-block;
 padding:9px 22px;
@@ -82,12 +82,11 @@ font-size:.78rem;
 letter-spacing:.15em;
 text-transform:uppercase;
 color:#143f2e;
-margin-bottom:45px;
+margin-bottom:40px;
 }
-
 .hero p{
 font-size:1.25rem;
-line-height:1.85;
+line-height:1.8;
 color:#3f6152;
 }
 
@@ -97,42 +96,37 @@ background:#f9fdfb;
 }
 .story h3{
 font-family:"Playfair Display",serif;
-font-size:2.5rem;
-margin-bottom:25px;
+font-size:2.4rem;
+margin-bottom:22px;
 }
 .story p{
 max-width:880px;
-font-size:1.18rem;
-line-height:1.85;
+font-size:1.15rem;
+line-height:1.8;
 color:#3f6152;
-margin-bottom:45px;
+margin-bottom:40px;
 }
 
 /* VALUES */
 .values{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:40px;
-margin-top:40px;
+gap:35px;
+margin-top:30px;
 }
 .value-box{
 background:white;
-padding:40px;
+padding:36px;
 border-radius:22px;
-box-shadow:0 15px 40px rgba(0,0,0,.06);
-transition:.3s cubic-bezier(.4,0,.2,1);
-}
-.value-box:hover{
-transform:translateY(-4px);
-box-shadow:0 22px 55px rgba(0,0,0,.09);
+box-shadow:0 12px 30px rgba(0,0,0,.06);
 }
 .value-box h4{
 font-family:"Playfair Display",serif;
-font-size:1.45rem;
-margin-bottom:12px;
+font-size:1.4rem;
+margin-bottom:10px;
 }
 .value-box p{
-font-size:1.08rem;
+font-size:1.05rem;
 line-height:1.7;
 color:#4c6b5c;
 }
@@ -143,50 +137,44 @@ background:#edf7f1;
 }
 .team h3{
 font-family:"Playfair Display",serif;
-font-size:2.6rem;
-margin-bottom:20px;
+font-size:2.4rem;
+margin-bottom:18px;
 }
 .team p{
 max-width:750px;
-font-size:1.15rem;
-line-height:1.8;
+font-size:1.1rem;
+line-height:1.75;
 color:#3f6152;
-margin-bottom:60px;
+margin-bottom:50px;
 }
-
 .team-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:35px;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:30px;
 }
-
 .team-card{
 background:white;
-border-radius:22px;
-padding:22px;
-box-shadow:0 14px 35px rgba(0,0,0,.07);
+border-radius:20px;
+padding:18px;
+box-shadow:0 12px 28px rgba(0,0,0,.07);
 text-align:center;
-transition:.3s cubic-bezier(.4,0,.2,1);
-max-width:260px;
+max-width:230px;
 margin:auto;
 }
-
 .team-card img{
 width:100%;
 aspect-ratio:1 / 1;
 object-fit:cover;
-border-radius:18px;
-margin-bottom:14px;
+border-radius:16px;
+margin-bottom:10px;
 }
-
 .team-card h4{
 font-family:"Playfair Display",serif;
-font-size:1.25rem;
-margin-bottom:4px;
+font-size:1.15rem;
+margin-bottom:3px;
 }
-
 .team-card span{
-font-size:.95rem;
+font-size:.9rem;
 color:#567b6a;
 }
 
@@ -195,18 +183,16 @@ footer{
 background:#143f2e;
 color:white;
 text-align:center;
-padding:40px;
+padding:36px;
+font-size:.9rem;
 }
 
 /* REVEAL */
 .reveal{
 opacity:0;
 transform:translateY(20px);
-transition:
-opacity .45s cubic-bezier(.4,0,.2,1),
-transform .45s cubic-bezier(.4,0,.2,1);
+transition:.45s cubic-bezier(.4,0,.2,1);
 }
-
 .reveal.visible{
 opacity:1;
 transform:translateY(0);
@@ -214,7 +200,24 @@ transform:translateY(0);
 
 /* MOBILE */
 @media(max-width:900px){
+
+section{padding:90px 8%}
+
 .hero h2{font-size:2.2rem}
+.hero .motto{font-size:1.2rem}
+.hero p{font-size:1.05rem;line-height:1.7}
+
+.story h3{font-size:2rem}
+.story p{font-size:1.05rem;line-height:1.7}
+
+.value-box{padding:28px}
+.value-box h4{font-size:1.25rem}
+.value-box p{font-size:1rem}
+
+.team h3{font-size:2rem}
+.team p{font-size:1.05rem}
+.team-grid{gap:24px}
+
 }
 </style>
 </head>
@@ -316,15 +319,13 @@ structured action and quiet impact.
 </footer>
 
 <script>
-const observer = new IntersectionObserver(entries=>{
+const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
 entry.target.classList.add("visible");
-}else{
-entry.target.classList.remove("visible");
 }
 });
-},{threshold:0.25});
+},{threshold:0.2});
 
 document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 </script>
