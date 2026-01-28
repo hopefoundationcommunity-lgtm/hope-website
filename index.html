@@ -20,7 +20,7 @@ body {
 /* HEADER */
 header {
   background:#143f2e;
-  padding:18px 8%;
+  padding:16px 8%;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -32,9 +32,7 @@ header {
 header h1 { color:white; }
 
 /* NAV */
-nav {
-  display:flex;
-}
+nav { display:flex; }
 
 nav a {
   color:white;
@@ -60,37 +58,33 @@ nav a {
   transition:.35s;
 }
 
-.menu-toggle.active span:nth-child(1) {
-  transform:translateY(10px) rotate(45deg);
-}
-.menu-toggle.active span:nth-child(2) {
-  opacity:0;
-}
-.menu-toggle.active span:nth-child(3) {
-  transform:translateY(-10px) rotate(-45deg);
-}
+.menu-toggle.active span:nth-child(1) { transform:translateY(10px) rotate(45deg); }
+.menu-toggle.active span:nth-child(2) { opacity:0; }
+.menu-toggle.active span:nth-child(3) { transform:translateY(-10px) rotate(-45deg); }
 
 /* SECTIONS */
-section { padding:120px 10%; }
+section { padding:90px 10%; }
 
 /* HERO */
 .hero {
   background:linear-gradient(#f2faf6,#edf7f1);
   text-align:center;
+  padding-top:70px;
+  padding-bottom:70px;
 }
 
 .hero h2 {
   font-family:"Playfair Display", serif;
   font-size:3rem;
   max-width:900px;
-  margin:0 auto 24px;
+  margin:0 auto 22px;
 }
 
 .hero p {
   max-width:760px;
-  margin:0 auto 45px;
-  font-size:1.25rem;
-  line-height:1.85;
+  margin:0 auto 36px;
+  font-size:1.2rem;
+  line-height:1.8;
   color:#3f6152;
 }
 
@@ -102,7 +96,7 @@ section { padding:120px 10%; }
 }
 
 .hero-buttons a {
-  padding:16px 38px;
+  padding:14px 34px;
   border-radius:30px;
   text-decoration:none;
   font-weight:600;
@@ -116,56 +110,56 @@ section { padding:120px 10%; }
 
 .what-header {
   max-width:800px;
-  margin-bottom:70px;
+  margin-bottom:50px;
 }
 
 .what-header h2 {
   font-family:"Playfair Display", serif;
-  font-size:2.7rem;
-  margin-bottom:20px;
+  font-size:2.5rem;
+  margin-bottom:16px;
 }
 
 .what-header p {
-  font-size:1.15rem;
-  line-height:1.9;
+  font-size:1.1rem;
+  line-height:1.8;
   color:#3f6152;
 }
 
 .what-grid {
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:40px;
+  gap:36px;
 }
 
 .what-card {
   background:white;
   border-radius:26px;
-  padding:48px 40px;
-  box-shadow:0 20px 45px rgba(0,0,0,0.06);
+  padding:42px 36px;
+  box-shadow:0 18px 40px rgba(0,0,0,0.06);
 }
 
 .what-icon {
-  width:56px;
-  height:56px;
-  border-radius:16px;
+  width:52px;
+  height:52px;
+  border-radius:14px;
   background:#143f2e;
   display:flex;
   align-items:center;
   justify-content:center;
-  margin-bottom:24px;
+  margin-bottom:22px;
   color:white;
-  font-size:1.5rem;
+  font-size:1.4rem;
 }
 
 .what-card h3 {
   font-family:"Playfair Display", serif;
-  font-size:1.55rem;
-  margin-bottom:14px;
+  font-size:1.45rem;
+  margin-bottom:12px;
 }
 
 .what-card p {
-  font-size:1.1rem;
-  line-height:1.8;
+  font-size:1.05rem;
+  line-height:1.75;
   color:#3f6152;
 }
 
@@ -174,14 +168,14 @@ section { padding:120px 10%; }
 
 .who h2, .why h2 {
   font-family:"Playfair Display", serif;
-  font-size:2.5rem;
-  margin-bottom:22px;
+  font-size:2.3rem;
+  margin-bottom:18px;
 }
 
 .who p, .why p {
   max-width:850px;
-  font-size:1.15rem;
-  line-height:1.9;
+  font-size:1.1rem;
+  line-height:1.8;
   color:#3f6152;
 }
 
@@ -190,13 +184,13 @@ footer {
   background:#143f2e;
   color:white;
   text-align:center;
-  padding:36px;
+  padding:30px;
 }
 
 /* REVEAL */
 .reveal {
   opacity:0;
-  transform:translateY(25px);
+  transform:translateY(20px);
   transition:.6s cubic-bezier(.4,0,.2,1);
 }
 .reveal.visible {
@@ -207,22 +201,17 @@ footer {
 /* MOBILE */
 @media(max-width:900px){
 
-  header {
-    flex-wrap:wrap;
-    padding:16px 6%;
-  }
+  header { padding:14px 6%; }
 
   nav {
     position:absolute;
     top:100%;
     left:0;
     width:100%;
-
     flex-direction:column;
     background:#143f2e;
-    padding:22px 0;
+    padding:18px 0;
     border-radius:0 0 18px 18px;
-
     opacity:0;
     transform:translateY(-10px); 
     pointer-events:none;
@@ -230,10 +219,10 @@ footer {
   }
 
   nav a {
-    margin:14px 0;
+    margin:12px 0;
     text-align:center;
-    font-size:1.15rem;
-    padding:12px 0;
+    font-size:1.1rem;
+    padding:10px 0;
   }
 
   nav.active {
@@ -242,20 +231,20 @@ footer {
     pointer-events:auto;
   }
 
-  .menu-toggle {
-    display:flex;
-  }
+  .menu-toggle { display:flex; }
 
-  section { padding:90px 7%; }
+  section { padding:65px 7%; }
+
+  .hero { padding-top:55px; padding-bottom:55px; }
 
   .hero h2 { font-size:2rem; }
-  .hero p { font-size:1.05rem; }
+  .hero p { font-size:1rem; }
+
+  .what-grid { grid-template-columns:1fr; }
 
   .what-header h2,
   .who h2,
   .why h2 { font-size:2rem; }
-
-  .what-grid { grid-template-columns:1fr; }
 }
 </style>
 </head>
@@ -298,7 +287,7 @@ Our role is to take responsibility for the full journey of support — from reco
 
 <div class="what-grid">
 
-<div class="what-card">
+<div class="what-card reveal">
 <div class="what-icon">❤️</div>
 <h3>Medical Assistance</h3>
 <p>
@@ -306,7 +295,7 @@ We raise funds to support individuals and families who are unable to afford urge
 </p>
 </div>
 
-<div class="what-card">
+<div class="what-card reveal">
 <div class="what-icon">📚</div>
 <h3>Educational Support</h3>
 <p>
@@ -314,7 +303,7 @@ We provide financial assistance to students whose education is at risk due to ec
 </p>
 </div>
 
-<div class="what-card">
+<div class="what-card reveal">
 <div class="what-icon">✔</div>
 <h3>Case Verification</h3>
 <p>
@@ -356,9 +345,11 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
       entry.target.classList.add("visible");
+    } else {
+      entry.target.classList.remove("visible");
     }
   });
-},{ threshold:0.25 });
+},{ threshold:0.2 });
 
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 </script>
