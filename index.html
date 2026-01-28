@@ -41,7 +41,6 @@ nav a {
   margin-left:25px;
   text-decoration:none;
   font-weight:500;
-  opacity:.9;
 }
 
 /* HAMBURGER */
@@ -58,7 +57,7 @@ nav a {
   height:3px;
   background:white;
   border-radius:2px;
-  transition:transform .35s ease, opacity .2s ease;
+  transition:.35s;
 }
 
 .menu-toggle.active span:nth-child(1) {
@@ -116,14 +115,14 @@ section { padding:120px 10%; }
 .what-we-do { background:#edf7f1; }
 
 .what-header {
-  max-width:760px;
-  margin-bottom:60px;
+  max-width:800px;
+  margin-bottom:70px;
 }
 
 .what-header h2 {
   font-family:"Playfair Display", serif;
-  font-size:2.6rem;
-  margin-bottom:18px;
+  font-size:2.7rem;
+  margin-bottom:20px;
 }
 
 .what-header p {
@@ -176,11 +175,11 @@ section { padding:120px 10%; }
 .who h2, .why h2 {
   font-family:"Playfair Display", serif;
   font-size:2.5rem;
-  margin-bottom:20px;
+  margin-bottom:22px;
 }
 
 .who p, .why p {
-  max-width:900px;
+  max-width:850px;
   font-size:1.15rem;
   line-height:1.9;
   color:#3f6152;
@@ -192,6 +191,17 @@ footer {
   color:white;
   text-align:center;
   padding:36px;
+}
+
+/* REVEAL */
+.reveal {
+  opacity:0;
+  transform:translateY(25px);
+  transition:.6s cubic-bezier(.4,0,.2,1);
+}
+.reveal.visible {
+  opacity:1;
+  transform:none;
 }
 
 /* MOBILE */
@@ -207,25 +217,24 @@ footer {
     flex-direction:column;
     background:#143f2e;
     margin-top:14px;
-    padding:18px 0;
-    border-radius:14px;
-
+    padding:22px 0;
+    border-radius:18px;
     opacity:0;
     transform:translateY(-10px);
     pointer-events:none;
-    transition:opacity .35s ease, transform .35s ease;
+    transition:.35s;
   }
 
   nav a {
-    margin:16px 0;
+    margin:14px 0;
     text-align:center;
     font-size:1.15rem;
-    padding:10px 0;
+    padding:12px 0;
   }
 
   nav.active {
     opacity:1;
-    transform:translateY(0);
+    transform:none;
     pointer-events:auto;
   }
 
@@ -235,48 +244,14 @@ footer {
 
   section { padding:90px 7%; }
 
-  .hero h2 {
-    font-size:2rem;
-    line-height:1.25;
-  }
+  .hero h2 { font-size:2rem; }
+  .hero p { font-size:1.05rem; }
 
-  .hero p {
-    font-size:1.05rem;
-    line-height:1.8;
-  }
+  .what-header h2,
+  .who h2,
+  .why h2 { font-size:2rem; }
 
-  .what-header h2 {
-    font-size:2rem;
-  }
-
-  .what-header p {
-    font-size:1.05rem;
-  }
-
-  .what-grid {
-    grid-template-columns:1fr;
-    gap:32px;
-  }
-
-  .what-card {
-    padding:36px 26px;
-  }
-
-  .what-card h3 {
-    font-size:1.35rem;
-  }
-
-  .what-card p {
-    font-size:1rem;
-  }
-
-  .who h2, .why h2 {
-    font-size:2rem;
-  }
-
-  .who p, .why p {
-    font-size:1.05rem;
-  }
+  .what-grid { grid-template-columns:1fr; }
 }
 </style>
 </head>
@@ -286,9 +261,7 @@ footer {
 <header>
   <h1>H.O.P.E.</h1>
   <div class="menu-toggle" id="menu-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span>
   </div>
   <nav id="nav-menu">
     <a href="index.html">Home</a>
@@ -299,13 +272,11 @@ footer {
   </nav>
 </header>
 
-<section class="hero">
+<section class="hero reveal">
 <h2>Helping people reach healthcare and education when it matters most.</h2>
 <p>
-H.O.P.E. is a student-led foundation built on trust, compassion, and purpose. 
-We focus on addressing real medical and educational challenges while inspiring young people 
-to step forward as active contributors to social change. By combining support with awareness 
-and responsibility, we strive to create lasting impact within communities that need it most.
+H.O.P.E. is a student-led foundation built on trust, compassion, and purpose.  
+We focus on addressing real medical and educational challenges while inspiring young people to step forward as active contributors to social change. By combining support with awareness and responsibility, we strive to create lasting impact within communities that need it most.
 </p>
 <div class="hero-buttons">
 <a href="mission.html" class="btn-primary">Discover our mission</a>
@@ -313,12 +284,11 @@ and responsibility, we strive to create lasting impact within communities that n
 </div>
 </section>
 
-<section class="what-we-do">
+<section class="what-we-do reveal">
 <div class="what-header">
 <h2>What We Do</h2>
 <p>
-Our role is to take responsibility for the full journey of support — from recognizing authentic 
-cases in need, to directing funds and resources so that help reaches the right place without delay.
+Our role is to take responsibility for the full journey of support — from recognizing authentic cases in need, to directing funds and resources so that help reaches the right place without delay. We manage this process with care, accountability, and a commitment to ensuring that every contribution creates real and meaningful change.
 </p>
 </div>
 
@@ -328,10 +298,7 @@ cases in need, to directing funds and resources so that help reaches the right p
 <div class="what-icon">❤️</div>
 <h3>Medical Assistance</h3>
 <p>
-We raise funds to support individuals and families facing urgent medical needs but lacking the 
-financial means to access treatment. Through collective contributions, we help cover costs related 
-to surgeries, hospital care, medications, and other essential medical services so that health does 
-not become a privilege reserved for only a few.
+We raise funds to support individuals and families who are unable to afford urgent medical treatment. Through collective contributions, we help cover hospital expenses, surgeries, and critical care so that financial limitations do not stand in the way of survival and recovery.
 </p>
 </div>
 
@@ -339,10 +306,7 @@ not become a privilege reserved for only a few.
 <div class="what-icon">📚</div>
 <h3>Educational Support</h3>
 <p>
-We provide financial assistance to students whose education is threatened by economic hardship. 
-By crowdfunding resources for school and college fees, learning materials, and related necessities, 
-we help ensure that capable and motivated students are not forced to abandon their studies due to 
-circumstances beyond their control.
+We provide financial assistance to students whose education is at risk due to economic hardship. By helping with fees and essential learning needs, we work to ensure that promising futures are not cut short by circumstances beyond their control.
 </p>
 </div>
 
@@ -350,32 +314,24 @@ circumstances beyond their control.
 <div class="what-icon">✔</div>
 <h3>Case Verification</h3>
 <p>
-Every request for support is carefully reviewed before funds are raised or distributed. We verify 
-documents, assess the urgency of each case, and work through trusted contacts to confirm authenticity, 
-so that contributions are used responsibly and reach those who genuinely need them.
+Every request for support is carefully reviewed and verified before funds are raised or distributed. This process allows us to maintain transparency, prevent misuse, and ensure that help reaches those who genuinely need it.
 </p>
 </div>
 
 </div>
 </section>
 
-<section class="who">
+<section class="who reveal">
 <h2>Who We Are</h2>
 <p>
-We are a collective of college students from different parts of India who believe that access to 
-healthcare and education should never depend on financial privilege. H.O.P.E. exists as a student-led 
-initiative that brings together young people who want to contribute meaningfully to society, using 
-their time, effort, and networks to support those facing critical challenges.
+We are a group of college students from different parts of India who believe that access to healthcare and education should never depend on financial privilege. As young individuals, we aim not only to provide assistance but also to encourage greater awareness, responsibility, and participation among youth in addressing real social challenges.
 </p>
 </section>
 
-<section class="why">
+<section class="why reveal">
 <h2>Why This Matters</h2>
 <p>
-For many individuals and families, a medical emergency or the inability to continue education can 
-permanently alter the course of their lives. By stepping in during these moments, we aim to prevent 
-temporary financial hardship from becoming lifelong disadvantage. Our work is driven by the belief 
-that timely support can restore opportunity, dignity, and hope where it is most needed.
+For many families, a medical emergency or interrupted education can permanently change the course of life. We exist to step in at these critical moments — so that financial hardship does not become a barrier to survival, learning, or opportunity, and so that no one is left to face these struggles alone.
 </p>
 </section>
 
@@ -391,6 +347,16 @@ menuToggle.addEventListener("click", () => {
   navMenu.classList.toggle("active");
   menuToggle.classList.toggle("active");
 });
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+    }
+  });
+},{ threshold:0.25 });
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 </script>
 
 </body>
