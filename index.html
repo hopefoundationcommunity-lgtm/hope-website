@@ -49,7 +49,6 @@ nav a {
   flex-direction:column;
   justify-content:space-between;
   cursor:pointer;
-  z-index:1100;
 }
 
 .menu-toggle span {
@@ -110,7 +109,7 @@ section { padding:90px 10%; }
 .what-we-do { background:#edf7f1; }
 
 .what-header {
-  max-width:800px;
+  max-width:850px;
   margin-bottom:50px;
 }
 
@@ -118,18 +117,6 @@ section { padding:90px 10%; }
   font-family:"Playfair Display", serif;
   font-size:2.5rem;
   margin-bottom:16px;
-}
-
-.what-header h2::after,
-.who h2::after,
-.why h2::after {
-  content:"";
-  display:block;
-  width:60px;
-  height:4px;
-  background:#143f2e;
-  margin-top:14px;
-  border-radius:10px;
 }
 
 .what-header p {
@@ -149,7 +136,6 @@ section { padding:90px 10%; }
   border-radius:26px;
   padding:42px 36px;
   box-shadow:0 18px 40px rgba(0,0,0,0.06);
-  transition:.3s ease;
 }
 
 .what-icon {
@@ -178,7 +164,16 @@ section { padding:90px 10%; }
 }
 
 /* WHO / WHY */
-.who, .why { background:#f9fdfb; }
+.who, .why {
+  background:#f9fdfb;
+}
+
+.section-wrap {
+  max-width:900px;
+  margin:auto;
+  border-left:4px solid #143f2e;
+  padding-left:40px;
+}
 
 .who h2, .why h2 {
   font-family:"Playfair Display", serif;
@@ -187,7 +182,6 @@ section { padding:90px 10%; }
 }
 
 .who p, .why p {
-  max-width:850px;
   font-size:1.1rem;
   line-height:1.8;
   color:#3f6152;
@@ -212,41 +206,6 @@ footer {
   transform:none;
 }
 
-/* ===== DESKTOP ENHANCEMENTS ONLY ===== */
-@media (min-width:901px) {
-
-  .what-header,
-  .who p,
-  .why p {
-    margin-left:auto;
-    margin-right:auto;
-    text-align:center;
-  }
-
-  .what-header p,
-  .who p,
-  .why p {
-    font-size:1.15rem;
-    line-height:1.9;
-  }
-
-  .who, .why {
-    padding:120px 15%;
-  }
-
-  .who p, .why p {
-    background:white;
-    padding:40px 50px;
-    border-radius:24px;
-    box-shadow:0 12px 30px rgba(0,0,0,.05);
-  }
-
-  .what-card:hover {
-    transform:translateY(-6px);
-    box-shadow:0 25px 60px rgba(0,0,0,.08);
-  }
-}
-
 /* MOBILE */
 @media(max-width:900px){
 
@@ -263,7 +222,6 @@ footer {
     opacity:0;
     pointer-events:none;
     transition:.35s;
-    z-index:1000;
   }
 
   nav a {
@@ -282,12 +240,15 @@ footer {
 
   section { padding:65px 7%; }
 
-  .hero { padding-top:55px; padding-bottom:55px; }
-
   .hero h2 { font-size:2rem; }
   .hero p { font-size:1rem; }
 
   .what-grid { grid-template-columns:1fr; }
+
+  .section-wrap {
+    border-left:none;
+    padding-left:0;
+  }
 
   .what-header h2,
   .who h2,
@@ -300,11 +261,9 @@ footer {
 
 <header>
   <h1 onclick="location.href='index.html'">H.O.P.E.</h1>
-
   <div class="menu-toggle" id="menu-toggle">
     <span></span><span></span><span></span>
   </div>
-
   <nav id="nav-menu">
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
@@ -335,46 +294,42 @@ Our role is to take responsibility for the full journey of support — from reco
 </div>
 
 <div class="what-grid">
-
 <div class="what-card reveal">
 <div class="what-icon">❤️</div>
 <h3>Medical Assistance</h3>
-<p>
-We raise funds to support individuals and families who are unable to afford urgent medical treatment. Through collective contributions, we help cover hospital expenses, surgeries, and critical care so that financial limitations do not stand in the way of survival and recovery.
-</p>
+<p>We raise funds to support individuals and families who are unable to afford urgent medical treatment. Through collective contributions, we help cover hospital expenses, surgeries, and critical care so that financial limitations do not stand in the way of survival and recovery.</p>
 </div>
 
 <div class="what-card reveal">
 <div class="what-icon">📚</div>
 <h3>Educational Support</h3>
-<p>
-We provide financial assistance to students whose education is at risk due to economic hardship. By helping with fees and essential learning needs, we work to ensure that promising futures are not cut short by circumstances beyond their control.
-</p>
+<p>We provide financial assistance to students whose education is at risk due to economic hardship. By helping with fees and essential learning needs, we work to ensure that promising futures are not cut short by circumstances beyond their control.</p>
 </div>
 
 <div class="what-card reveal">
 <div class="what-icon">✔</div>
 <h3>Case Verification</h3>
-<p>
-Every request for support is carefully reviewed and verified before funds are raised or distributed. This process allows us to maintain transparency, prevent misuse, and ensure that help reaches those who genuinely need it.
-</p>
+<p>Every request for support is carefully reviewed and verified before funds are raised or distributed. This process allows us to maintain transparency, prevent misuse, and ensure that help reaches those who genuinely need it.</p>
 </div>
-
 </div>
 </section>
 
 <section class="who reveal">
+<div class="section-wrap">
 <h2>Who We Are</h2>
 <p>
 We are a group of college students from different parts of India who believe that access to healthcare and education should never depend on financial privilege. As young individuals, we aim not only to provide assistance but also to encourage greater awareness, responsibility, and participation among youth in addressing real social challenges.
 </p>
+</div>
 </section>
 
 <section class="why reveal">
+<div class="section-wrap">
 <h2>Why This Matters</h2>
 <p>
 For many families, a medical emergency or interrupted education can permanently change the course of life. We exist to step in at these critical moments — so that financial hardship does not become a barrier to survival, learning, or opportunity, and so that no one is left to face these struggles alone.
 </p>
+</div>
 </section>
 
 <footer>
@@ -404,23 +359,18 @@ const observer = new IntersectionObserver(entries => {
     const currentScrollY = window.scrollY;
     const scrollingUp = currentScrollY < lastScrollY;
 
-    if (scrollingUp) {
-      entry.target.style.transition = "0.25s cubic-bezier(.4,0,.2,1)";
-    } else {
-      entry.target.style.transition = "0.6s cubic-bezier(.4,0,.2,1)";
-    }
+    entry.target.style.transition = scrollingUp
+      ? "0.25s cubic-bezier(.4,0,.2,1)"
+      : "0.6s cubic-bezier(.4,0,.2,1)";
 
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    } else {
-      entry.target.classList.remove("visible");
-    }
+    if (entry.isIntersecting) entry.target.classList.add("visible");
+    else entry.target.classList.remove("visible");
 
     lastScrollY = currentScrollY;
   });
 },{
-  threshold: 0.1,
-  rootMargin: "0px 0px -120px 0px"
+  threshold:0.1,
+  rootMargin:"0px 0px -120px 0px"
 });
 
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
