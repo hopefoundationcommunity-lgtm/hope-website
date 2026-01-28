@@ -213,17 +213,21 @@ footer {
   }
 
   nav {
-    width:100%;
-    flex-direction:column;
-    background:#143f2e;
-    margin-top:14px;
-    padding:22px 0;
-    border-radius:18px;
-    opacity:0;
-    transform:translateY(-10px);
-    pointer-events:none;
-    transition:.35s;
-  }
+  position:absolute;
+  top:100%;
+  left:0;
+  width:100%;
+
+  flex-direction:column;
+  background:#143f2e;
+  padding:22px 0;
+  border-radius:0 0 18px 18px;
+
+  opacity:0;
+  transform:translateY(-10px);
+  pointer-events:none;
+  transition:.35s;
+}
 
   nav a {
     margin:14px 0;
