@@ -29,7 +29,7 @@ header {
   z-index:1000;
 }
 
-header h1 { color:white; }
+header h1 { color:white; cursor:pointer; }
 
 /* NAV */
 nav { display:flex; }
@@ -120,6 +120,18 @@ section { padding:90px 10%; }
   margin-bottom:16px;
 }
 
+.what-header h2::after,
+.who h2::after,
+.why h2::after {
+  content:"";
+  display:block;
+  width:60px;
+  height:4px;
+  background:#143f2e;
+  margin-top:14px;
+  border-radius:10px;
+}
+
 .what-header p {
   font-size:1.1rem;
   line-height:1.8;
@@ -137,6 +149,7 @@ section { padding:90px 10%; }
   border-radius:26px;
   padding:42px 36px;
   box-shadow:0 18px 40px rgba(0,0,0,0.06);
+  transition:.3s ease;
 }
 
 .what-icon {
@@ -199,6 +212,41 @@ footer {
   transform:none;
 }
 
+/* ===== DESKTOP ENHANCEMENTS ONLY ===== */
+@media (min-width:901px) {
+
+  .what-header,
+  .who p,
+  .why p {
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+  }
+
+  .what-header p,
+  .who p,
+  .why p {
+    font-size:1.15rem;
+    line-height:1.9;
+  }
+
+  .who, .why {
+    padding:120px 15%;
+  }
+
+  .who p, .why p {
+    background:white;
+    padding:40px 50px;
+    border-radius:24px;
+    box-shadow:0 12px 30px rgba(0,0,0,.05);
+  }
+
+  .what-card:hover {
+    transform:translateY(-6px);
+    box-shadow:0 25px 60px rgba(0,0,0,.08);
+  }
+}
+
 /* MOBILE */
 @media(max-width:900px){
 
@@ -251,7 +299,7 @@ footer {
 <body>
 
 <header>
-  <h1 onclick="location.href='index.html'" style="cursor:pointer;">H.O.P.E.</h1>
+  <h1 onclick="location.href='index.html'">H.O.P.E.</h1>
 
   <div class="menu-toggle" id="menu-toggle">
     <span></span><span></span><span></span>
