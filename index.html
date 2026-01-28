@@ -15,7 +15,20 @@ body {
   font-family:"Inter", sans-serif;
   background:#f2faf6;
   color:#1f2f27;
+  overflow-x:hidden;
 }
+
+/* Decorative blobs (desktop only) */
+.bg-blur {
+  position:absolute;
+  width:400px;
+  height:400px;
+  background:radial-gradient(circle, rgba(20,63,46,0.15), transparent 70%);
+  filter:blur(60px);
+  z-index:-1;
+}
+.blur-1 { top:200px; left:-150px; }
+.blur-2 { top:900px; right:-150px; }
 
 /* HEADER */
 header {
@@ -63,14 +76,15 @@ nav a {
 .menu-toggle.active span:nth-child(3) { transform:translateY(-10px) rotate(-45deg); }
 
 /* SECTIONS */
-section { padding:90px 10%; }
+section {
+  padding:100px 10%;
+  position:relative;
+}
 
 /* HERO */
 .hero {
   background:linear-gradient(#f2faf6,#edf7f1);
   text-align:center;
-  padding-top:70px;
-  padding-bottom:70px;
 }
 
 .hero h2 {
@@ -106,11 +120,13 @@ section { padding:90px 10%; }
 .btn-secondary { border:2px solid #143f2e; color:#143f2e; }
 
 /* WHAT WE DO */
-.what-we-do { background:#edf7f1; }
+.what-we-do {
+  background:#edf7f1;
+}
 
 .what-header {
   max-width:850px;
-  margin-bottom:50px;
+  margin-bottom:60px;
 }
 
 .what-header h2 {
@@ -136,6 +152,12 @@ section { padding:90px 10%; }
   border-radius:26px;
   padding:42px 36px;
   box-shadow:0 18px 40px rgba(0,0,0,0.06);
+  transition:.35s ease;
+}
+
+.what-card:hover {
+  transform:translateY(-8px);
+  box-shadow:0 25px 50px rgba(0,0,0,0.08);
 }
 
 .what-icon {
@@ -171,8 +193,8 @@ section { padding:90px 10%; }
 .section-wrap {
   max-width:900px;
   margin:auto;
+  padding-left:50px;
   border-left:4px solid #143f2e;
-  padding-left:40px;
 }
 
 .who h2, .why h2 {
@@ -208,6 +230,8 @@ footer {
 
 /* MOBILE */
 @media(max-width:900px){
+
+  .bg-blur { display:none; }
 
   header { padding:14px 6%; }
 
@@ -259,6 +283,9 @@ footer {
 
 <body>
 
+<div class="bg-blur blur-1"></div>
+<div class="bg-blur blur-2"></div>
+
 <header>
   <h1 onclick="location.href='index.html'">H.O.P.E.</h1>
   <div class="menu-toggle" id="menu-toggle">
@@ -299,6 +326,8 @@ Our role is to take responsibility for the full journey of support — from reco
 <h3>Medical Assistance</h3>
 <p>We raise funds to support individuals and families who are unable to afford urgent medical treatment. Through collective contributions, we help cover hospital expenses, surgeries, and critical care so that financial limitations do not stand in the way of survival and recovery.</p>
 </div>
+
+
 
 <div class="what-card reveal">
 <div class="what-icon">📚</div>
