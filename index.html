@@ -333,14 +333,6 @@ For many families, a medical emergency or interrupted education can permanently 
 </footer>
 
 <script>
-const menuToggle = document.getElementById("menu-toggle");
-const navMenu = document.getElementById("nav-menu");
-
-menuToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-  menuToggle.classList.toggle("active");
-});
-
 let lastScrollY = window.scrollY;
 
 const observer = new IntersectionObserver(entries => {
@@ -362,7 +354,10 @@ const observer = new IntersectionObserver(entries => {
 
     lastScrollY = currentScrollY;
   });
-},{ threshold:0.2 });
+},{
+  threshold: 0.1,
+  rootMargin: "0px 0px -120px 0px"
+});
 
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 </script>
