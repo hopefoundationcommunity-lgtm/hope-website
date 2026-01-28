@@ -341,13 +341,26 @@ menuToggle.addEventListener("click", () => {
   menuToggle.classList.toggle("active");
 });
 
+let lastScrollY = window.scrollY;
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if(entry.isIntersecting){
+    const currentScrollY = window.scrollY;
+    const scrollingUp = currentScrollY < lastScrollY;
+
+    if (scrollingUp) {
+      entry.target.style.transition = "0.25s cubic-bezier(.4,0,.2,1)";
+    } else {
+      entry.target.style.transition = "0.6s cubic-bezier(.4,0,.2,1)";
+    }
+
+    if (entry.isIntersecting) {
       entry.target.classList.add("visible");
     } else {
       entry.target.classList.remove("visible");
     }
+
+    lastScrollY = currentScrollY;
   });
 },{ threshold:0.2 });
 
