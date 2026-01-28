@@ -8,32 +8,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{
-  font-family:"Inter",sans-serif;
+* { box-sizing: border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family:"Inter", sans-serif;
   background:#f2faf6;
   color:#1f2f27;
 }
 
 /* HEADER */
-header{
+header {
   background:#143f2e;
   padding:18px 8%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  position:fixed;
+  position:sticky;
   top:0;
-  width:100%;
   z-index:100;
-  height:78px;
 }
-header h1{color:white;font-size:1.6rem}
 
-/* NAV DESKTOP */
-nav{display:flex;}
-nav a{
+header h1 { color:white; }
+
+/* NAV */
+nav {
+  display:flex;
+}
+
+nav a {
   color:white;
   margin-left:25px;
   text-decoration:none;
@@ -42,207 +45,238 @@ nav a{
 }
 
 /* HAMBURGER */
-.menu-toggle{
+.menu-toggle {
   display:none;
-  width:36px;
-  height:26px;
+  width:34px;
+  height:24px;
   flex-direction:column;
   justify-content:space-between;
   cursor:pointer;
 }
-.menu-toggle span{
+
+.menu-toggle span {
   height:3px;
   background:white;
   border-radius:2px;
-  transition:.35s ease;
+  transition:transform .35s ease, opacity .2s ease;
 }
-.menu-toggle.active span:nth-child(1){
-  transform:translateY(11px) rotate(45deg);
+
+.menu-toggle.active span:nth-child(1) {
+  transform:translateY(10px) rotate(45deg);
 }
-.menu-toggle.active span:nth-child(2){opacity:0;}
-.menu-toggle.active span:nth-child(3){
-  transform:translateY(-11px) rotate(-45deg);
+.menu-toggle.active span:nth-child(2) {
+  opacity:0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform:translateY(-10px) rotate(-45deg);
 }
 
 /* SECTIONS */
-section{padding:160px 10% 140px;}
+section { padding:120px 10%; }
 
 /* HERO */
-.hero{
+.hero {
   background:linear-gradient(#f2faf6,#edf7f1);
   text-align:center;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding-top:140px;
 }
-.hero h2{
-  font-family:"Playfair Display",serif;
+
+.hero h2 {
+  font-family:"Playfair Display", serif;
   font-size:3rem;
   max-width:900px;
-  margin:0 auto 30px;
-  line-height:1.25;
+  margin:0 auto 24px;
 }
-.hero p{
+
+.hero p {
   max-width:760px;
-  margin:0 auto 70px;
+  margin:0 auto 45px;
   font-size:1.25rem;
-  line-height:2;
+  line-height:1.85;
   color:#3f6152;
 }
-.hero-buttons{
+
+.hero-buttons {
   display:flex;
   justify-content:center;
-  gap:22px;
+  gap:18px;
   flex-wrap:wrap;
 }
-.hero-buttons a{
-  padding:20px 52px;
-  border-radius:40px;
+
+.hero-buttons a {
+  padding:16px 38px;
+  border-radius:30px;
   text-decoration:none;
   font-weight:600;
-  font-size:1.05rem;
 }
-.btn-primary{background:#143f2e;color:white;}
-.btn-secondary{border:2px solid #143f2e;color:#143f2e;}
+
+.btn-primary { background:#143f2e; color:white; }
+.btn-secondary { border:2px solid #143f2e; color:#143f2e; }
 
 /* WHAT WE DO */
-.what-we-do{background:#edf7f1;}
-.what-header{max-width:720px;margin-bottom:90px;}
-.what-header h2{
-  font-family:"Playfair Display",serif;
-  font-size:2.6rem;
-  margin-bottom:20px;
+.what-we-do { background:#edf7f1; }
+
+.what-header {
+  max-width:760px;
+  margin-bottom:60px;
 }
-.what-header p{
+
+.what-header h2 {
+  font-family:"Playfair Display", serif;
+  font-size:2.6rem;
+  margin-bottom:18px;
+}
+
+.what-header p {
   font-size:1.15rem;
-  line-height:2;
+  line-height:1.9;
   color:#3f6152;
 }
-.what-grid{
+
+.what-grid {
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:50px;
+  gap:40px;
 }
-.what-card{
+
+.what-card {
   background:white;
-  border-radius:28px;
-  padding:56px 44px;
+  border-radius:26px;
+  padding:48px 40px;
   box-shadow:0 20px 45px rgba(0,0,0,0.06);
 }
-.what-icon{
-  width:58px;height:58px;
+
+.what-icon {
+  width:56px;
+  height:56px;
   border-radius:16px;
   background:#143f2e;
   display:flex;
   align-items:center;
   justify-content:center;
-  margin-bottom:28px;
+  margin-bottom:24px;
   color:white;
   font-size:1.5rem;
 }
-.what-card h3{
-  font-family:"Playfair Display",serif;
-  font-size:1.6rem;
-  margin-bottom:16px;
+
+.what-card h3 {
+  font-family:"Playfair Display", serif;
+  font-size:1.55rem;
+  margin-bottom:14px;
 }
-.what-card p{
+
+.what-card p {
   font-size:1.1rem;
-  line-height:1.9;
+  line-height:1.8;
   color:#3f6152;
 }
 
 /* WHO / WHY */
-.who,.why{background:#f9fdfb;}
-.who h2,.why h2{
-  font-family:"Playfair Display",serif;
+.who, .why { background:#f9fdfb; }
+
+.who h2, .why h2 {
+  font-family:"Playfair Display", serif;
   font-size:2.5rem;
-  margin-bottom:22px;
+  margin-bottom:20px;
 }
-.who p,.why p{
-  max-width:850px;
+
+.who p, .why p {
+  max-width:900px;
   font-size:1.15rem;
-  line-height:2;
+  line-height:1.9;
   color:#3f6152;
 }
 
 /* FOOTER */
-footer{
+footer {
   background:#143f2e;
   color:white;
   text-align:center;
-  padding:50px;
+  padding:36px;
 }
 
 /* MOBILE */
 @media(max-width:900px){
 
-header{
-  padding:18px 6%;
-}
+  header {
+    flex-wrap:wrap;
+    padding:16px 6%;
+  }
 
-.menu-toggle{display:flex;z-index:200;}
+  nav {
+    width:100%;
+    flex-direction:column;
+    background:#143f2e;
+    margin-top:14px;
+    padding:18px 0;
+    border-radius:14px;
 
-/* FULLSCREEN MENU */
-nav{
-  position:fixed;
-  inset:0;
-  background:linear-gradient(180deg,#143f2e,#0f2f22);
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  gap:34px;
-  opacity:0;
-  pointer-events:none;
-  transition:.35s ease;
-  z-index:150;
-}
-nav.active{
-  opacity:1;
-  pointer-events:auto;
-}
-nav a{
-  margin:0;
-  font-size:1.7rem;
-  padding:18px 60px;
-  border-radius:999px;
-}
+    opacity:0;
+    transform:translateY(-10px);
+    pointer-events:none;
+    transition:opacity .35s ease, transform .35s ease;
+  }
 
-/* HERO */
-section{padding:140px 8% 120px;}
+  nav a {
+    margin:16px 0;
+    text-align:center;
+    font-size:1.15rem;
+    padding:10px 0;
+  }
 
-.hero{
-  min-height:100vh;
-  padding-top:160px;
-}
-.hero h2{
-  font-size:2.3rem;
-  line-height:1.35;
-}
-.hero p{
-  font-size:1.1rem;
-  line-height:2;
-  margin-bottom:80px;
-}
-.hero-buttons a{
-  padding:20px 60px;
-  font-size:1.05rem;
-}
+  nav.active {
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+  }
 
-/* STACKED GRID */
-.what-grid{
-  grid-template-columns:1fr;
-  gap:48px;
-}
-.what-card{
-  padding:46px 32px;
-}
-.what-card h3{font-size:1.4rem;}
-.what-card p{font-size:1.05rem;}
+  .menu-toggle {
+    display:flex;
+  }
 
-.who h2,.why h2{font-size:2rem;}
-.who p,.why p{font-size:1.05rem;}
+  section { padding:90px 7%; }
+
+  .hero h2 {
+    font-size:2rem;
+    line-height:1.25;
+  }
+
+  .hero p {
+    font-size:1.05rem;
+    line-height:1.8;
+  }
+
+  .what-header h2 {
+    font-size:2rem;
+  }
+
+  .what-header p {
+    font-size:1.05rem;
+  }
+
+  .what-grid {
+    grid-template-columns:1fr;
+    gap:32px;
+  }
+
+  .what-card {
+    padding:36px 26px;
+  }
+
+  .what-card h3 {
+    font-size:1.35rem;
+  }
+
+  .what-card p {
+    font-size:1rem;
+  }
+
+  .who h2, .why h2 {
+    font-size:2rem;
+  }
+
+  .who p, .why p {
+    font-size:1.05rem;
+  }
 }
 </style>
 </head>
@@ -250,25 +284,28 @@ section{padding:140px 8% 120px;}
 <body>
 
 <header>
-<h1>H.O.P.E.</h1>
-<div class="menu-toggle" id="menu-toggle">
-<span></span><span></span><span></span>
-</div>
-<nav id="nav-menu">
-<a href="index.html">Home</a>
-<a href="about.html">About Us</a>
-<a href="mission.html">Mission & Vision</a>
-<a href="success.html">Our Successes</a>
-<a href="contact.html">Contact Us</a>
-</nav>
+  <h1>H.O.P.E.</h1>
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav id="nav-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="mission.html">Mission & Vision</a>
+    <a href="success.html">Our Successes</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
 </header>
 
 <section class="hero">
 <h2>Helping people reach healthcare and education when it matters most.</h2>
 <p>
-H.O.P.E. is a student-led foundation built on trust, compassion, and careful action.  
-We work to identify real medical and educational needs, and gently bridge the gap
-between people who want to help and people who urgently need it.
+H.O.P.E. is a student-led foundation built on trust, compassion, and purpose. 
+We focus on addressing real medical and educational challenges while inspiring young people 
+to step forward as active contributors to social change. By combining support with awareness 
+and responsibility, we strive to create lasting impact within communities that need it most.
 </p>
 <div class="hero-buttons">
 <a href="mission.html" class="btn-primary">Discover our mission</a>
@@ -280,16 +317,21 @@ between people who want to help and people who urgently need it.
 <div class="what-header">
 <h2>What We Do</h2>
 <p>
-Our role is to take responsibility for the full journey of support — from recognizing authentic cases in need, to directing funds and resources so that help reaches the right place without delay.
+Our role is to take responsibility for the full journey of support — from recognizing authentic 
+cases in need, to directing funds and resources so that help reaches the right place without delay.
 </p>
 </div>
 
 <div class="what-grid">
+
 <div class="what-card">
 <div class="what-icon">❤️</div>
 <h3>Medical Assistance</h3>
 <p>
-We raise funds to support people who are unable to afford urgent medical treatment. This includes help with surgery costs, hospital bills, medicines, and other critical healthcare expenses. By collecting contributions from the community and directing them to verified cases, we work to ensure that financial barriers do not decide who receives medical care and who does not.
+We raise funds to support individuals and families facing urgent medical needs but lacking the 
+financial means to access treatment. Through collective contributions, we help cover costs related 
+to surgeries, hospital care, medications, and other essential medical services so that health does 
+not become a privilege reserved for only a few.
 </p>
 </div>
 
@@ -297,7 +339,10 @@ We raise funds to support people who are unable to afford urgent medical treatme
 <div class="what-icon">📚</div>
 <h3>Educational Support</h3>
 <p>
-We provide financial assistance to students whose education is at risk due to economic hardship. Through community fundraising, we help cover essential academic expenses so that students can continue their studies instead of being forced to drop out. Our aim is to protect their opportunity to learn and to build a future that is not limited by their present circumstances.
+We provide financial assistance to students whose education is threatened by economic hardship. 
+By crowdfunding resources for school and college fees, learning materials, and related necessities, 
+we help ensure that capable and motivated students are not forced to abandon their studies due to 
+circumstances beyond their control.
 </p>
 </div>
 
@@ -305,23 +350,32 @@ We provide financial assistance to students whose education is at risk due to ec
 <div class="what-icon">✔</div>
 <h3>Case Verification</h3>
 <p>
-Before any funds are raised or distributed, each case is carefully verified using documents and trusted contacts. This allows us to confirm the urgency and authenticity of every request for help. By maintaining this process, we ensure that the money collected is used responsibly and reaches the individuals it is intended to support.
+Every request for support is carefully reviewed before funds are raised or distributed. We verify 
+documents, assess the urgency of each case, and work through trusted contacts to confirm authenticity, 
+so that contributions are used responsibly and reach those who genuinely need them.
 </p>
 </div>
+
 </div>
 </section>
 
 <section class="who">
 <h2>Who We Are</h2>
 <p>
-We are a student-led foundation formed by college students from different parts of India who believe that access to healthcare and education should not depend on financial background. Our work is driven by young people who want to take responsibility for real social problems by identifying genuine cases, raising funds, and ensuring that help reaches those who need it most. Through collective effort and accountability, we aim to turn compassion into organized and meaningful action.
+We are a collective of college students from different parts of India who believe that access to 
+healthcare and education should never depend on financial privilege. H.O.P.E. exists as a student-led 
+initiative that brings together young people who want to contribute meaningfully to society, using 
+their time, effort, and networks to support those facing critical challenges.
 </p>
 </section>
 
 <section class="why">
 <h2>Why This Matters</h2>
 <p>
-For many families, a medical emergency or an interrupted education can permanently change the direction of their lives. When financial limits decide who gets treatment or who continues studying, opportunity becomes unequal. We exist to intervene at these moments by mobilizing community support and directing it toward verified needs. By doing so, we work to prevent temporary financial hardship from becoming lifelong disadvantage.
+For many individuals and families, a medical emergency or the inability to continue education can 
+permanently alter the course of their lives. By stepping in during these moments, we aim to prevent 
+temporary financial hardship from becoming lifelong disadvantage. Our work is driven by the belief 
+that timely support can restore opportunity, dignity, and hope where it is most needed.
 </p>
 </section>
 
@@ -330,9 +384,10 @@ For many families, a medical emergency or an interrupted education can permanent
 </footer>
 
 <script>
-const menuToggle=document.getElementById("menu-toggle");
-const navMenu=document.getElementById("nav-menu");
-menuToggle.addEventListener("click",()=>{
+const menuToggle = document.getElementById("menu-toggle");
+const navMenu = document.getElementById("nav-menu");
+
+menuToggle.addEventListener("click", () => {
   navMenu.classList.toggle("active");
   menuToggle.classList.toggle("active");
 });
