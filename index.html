@@ -349,13 +349,31 @@ document.querySelectorAll("#nav-menu a").forEach(link => {
   });
 });
 
+let lastScrollY = window.scrollY;
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("visible");
+    const currentScrollY = window.scrollY;
+    const scrollingUp = currentScrollY < lastScrollY;
+
+    if (scrollingUp) {
+      entry.target.style.transition = "0.25s cubic-bezier(.4,0,.2,1)";
+    } else {
+      entry.target.style.transition = "0.6s cubic-bezier(.4,0,.2,1)";
     }
+
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    } else {
+      entry.target.classList.remove("visible");
+    }
+
+    lastScrollY = currentScrollY;
   });
-},{ threshold:0.15 });
+},{
+  threshold: 0.1,
+  rootMargin: "0px 0px -120px 0px"
+});
 
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 </script>
