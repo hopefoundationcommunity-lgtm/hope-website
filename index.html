@@ -109,11 +109,9 @@ section { padding:90px 10%; }
 /* WHAT WE DO */
 .what-we-do { background:#edf7f1; }
 
-/* FIXED DESKTOP ALIGNMENT */
 .what-header {
-  max-width:900px;
-  margin:0 auto 50px;
-  text-align:center;
+  max-width:800px;
+  margin-bottom:50px;
 }
 
 .what-header h2 {
@@ -254,11 +252,9 @@ footer {
 
 <header>
   <h1 onclick="location.href='index.html'" style="cursor:pointer;">H.O.P.E.</h1>
-
   <div class="menu-toggle" id="menu-toggle">
     <span></span><span></span><span></span>
   </div>
-
   <nav id="nav-menu">
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
@@ -268,23 +264,11 @@ footer {
   </nav>
 </header>
 
-<section class="hero reveal">
-<h2>Helping people reach healthcare and education when it matters most.</h2>
-<p>
-H.O.P.E. is a student-led foundation built on trust, compassion, and purpose.  
-We focus on addressing real medical and educational challenges while inspiring young people to step forward as active contributors to social change. By combining support with awareness and responsibility, we strive to create lasting impact within communities that need it most.
-</p>
-<div class="hero-buttons">
-<a href="mission.html" class="btn-primary">Discover our mission</a>
-<a href="success.html" class="btn-secondary">Support a case</a>
-</div>
-</section>
-
 <section class="what-we-do reveal">
 <div class="what-header">
 <h2>What We Do</h2>
 <p>
-Our role is to take responsibility for the full journey of support — from recognizing authentic cases in need, to directing funds and resources so that help reaches the right place without delay. We manage this process with care, accountability, and a commitment to ensuring that every contribution creates real and meaningful change.
+We focus on situations where support can change the course of a life — quietly, ethically, and with full responsibility for every rupee and every promise made.
 </p>
 </div>
 
@@ -294,7 +278,7 @@ Our role is to take responsibility for the full journey of support — from reco
 <div class="what-icon">❤️</div>
 <h3>Medical Assistance</h3>
 <p>
-We raise funds to support individuals and families who are unable to afford urgent medical treatment. Through collective contributions, we help cover hospital expenses, surgeries, and critical care so that financial limitations do not stand in the way of survival and recovery.
+We help patients reach treatment when finances stand in the way — supporting surgeries, hospital care, and urgent medical needs through verified cases and collective effort.
 </p>
 </div>
 
@@ -302,7 +286,7 @@ We raise funds to support individuals and families who are unable to afford urge
 <div class="what-icon">📚</div>
 <h3>Educational Support</h3>
 <p>
-We provide financial assistance to students whose education is at risk due to economic hardship. By helping with fees and essential learning needs, we work to ensure that promising futures are not cut short by circumstances beyond their control.
+We stand beside students whose education is at risk — helping them continue their studies when circumstances threaten to force them to stop.
 </p>
 </div>
 
@@ -310,30 +294,12 @@ We provide financial assistance to students whose education is at risk due to ec
 <div class="what-icon">✔</div>
 <h3>Case Verification</h3>
 <p>
-Every request for support is carefully reviewed and verified before funds are raised or distributed. This process allows us to maintain transparency, prevent misuse, and ensure that help reaches those who genuinely need it.
+Every case we support is carefully reviewed through documents and trusted community connections, so that help reaches exactly where it is meant to go.
 </p>
 </div>
 
 </div>
 </section>
-
-<section class="who reveal">
-<h2>Who We Are</h2>
-<p>
-We are a group of college students from different parts of India who believe that access to healthcare and education should never depend on financial privilege. As young individuals, we aim not only to provide assistance but also to encourage greater awareness, responsibility, and participation among youth in addressing real social challenges.
-</p>
-</section>
-
-<section class="why reveal">
-<h2>Why This Matters</h2>
-<p>
-For many families, a medical emergency or interrupted education can permanently change the course of life. We exist to step in at these critical moments — so that financial hardship does not become a barrier to survival, learning, or opportunity, and so that no one is left to face these struggles alone.
-</p>
-</section>
-
-<footer>
-© 2026 H.O.P.E. Foundation — Student-led, community-driven.
-</footer>
 
 <script>
 const menuToggle = document.getElementById("menu-toggle");
@@ -351,30 +317,17 @@ document.querySelectorAll("#nav-menu a").forEach(link => {
   });
 });
 
-let lastScrollY = window.scrollY;
-
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    const currentScrollY = window.scrollY;
-    const scrollingUp = currentScrollY < lastScrollY;
-
-    if (scrollingUp) {
-      entry.target.style.transition = "0.25s cubic-bezier(.4,0,.2,1)";
-    } else {
-      entry.target.style.transition = "0.6s cubic-bezier(.4,0,.2,1)";
-    }
-
-    if (entry.isIntersecting) {
+    if(entry.isIntersecting){
       entry.target.classList.add("visible");
     } else {
       entry.target.classList.remove("visible");
     }
-
-    lastScrollY = currentScrollY;
   });
 },{
-  threshold: 0.1,
-  rootMargin: "0px 0px -120px 0px"
+  threshold:0.1,
+  rootMargin:"0px 0px -120px 0px"
 });
 
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
